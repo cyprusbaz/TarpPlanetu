@@ -1,0 +1,216 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .planet-img {   
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .planet-img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .bg-primary {
+    background-color: #0A0F47 !important;
+  }
+  
+  .profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    /*border: 2px solid yellow; */
+  }
+
+
+  .rocket-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    /*border: 2px solid yellow; */
+  }
+
+  .full-bg {
+    background: url("../wwwroot/img/stars.jpg") no-repeat center center;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .form-box {
+    background-color: rgba(10, 15, 71, 0.65); /* #0A0F47 tamsi mėlyna, 50% permatoma */
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .full-bg {
+    position: relative;
+    background: url("/img/stars.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .bg-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.15); /* juodas permatomas sluoksnis */
+    z-index: 1;
+  }
+  
+  .container.position-relative {
+    z-index: 2; /* turinys virš overlay */
+  }
+  
+
+  .custom-input {
+    background-color: rgba(255, 255, 255, 0.1); /* švelniai permatomas */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) saturate(100%) invert(91%) sepia(60%) saturate(1644%) hue-rotate(7deg) brightness(100%) contrast(106%);
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .custom-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+
+  .custom-radio-wrapper {
+    max-width: 50%; /* Užims pusę form-box pločio */
+  }
+  
+  /* .custom-radio-btn {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  } */
+  
+  /* Pasirinktas mygtukas */
+  .btn-check:checked + .custom-radio-btn {
+    background-color: #FFD700;
+    color: #0A0F47;
+  }
+
+  .custom-radio-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: normal;
+    border-radius: 1rem;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-radio-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    /*background-color: rgba(255, 255, 255, 0.85);
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);*/
+  }
+
+  .hotel-img {
+    width: 48%;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  
+
+  .custom-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 0.5rem 1rem;
+    appearance: none;
+  }
+  
+  .custom-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dropdown-wrapper {
+    position: relative;
+  }
+  
+  .custom-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    appearance: none;
+    width: 100%;
+  }
+  
+  .custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+  }
+  
+  .dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+  }
+  
+  .pet-img {
+    width: 14%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .kaina-input {
+    max-width: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .kaina-input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+  }
+  
+  .btn-warning {
+    background-color: #FFE600;
+    color: black;
+    border: none;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
