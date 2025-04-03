@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pxj</title>
+    <link rel="stylesheet" href="./styles/clien_form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+          <h1>Sukurkite kelionę</h1>
+          
+          <div class="form-group">
+            <label for="lytis">Lytis</label>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle">
+                <span class="dropdown-text">Pasirinkite</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">Vyras</div>
+                <div class="dropdown-item">Moteris</div>
+                <div class="dropdown-item">Kita</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="zodiakas">Zodiako ženklas</label>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle">
+                <span class="dropdown-text">Pasirinkite</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">Avinas</div>
+                <div class="dropdown-item">Jautis</div>
+                <div class="dropdown-item">Dvyniai</div>
+                <div class="dropdown-item">Vėžys</div>
+                <div class="dropdown-item">Liūtas</div>
+                <div class="dropdown-item">Mergelė</div>
+                <div class="dropdown-item">Svarstyklės</div>
+                <div class="dropdown-item">Skorpionas</div>
+                <div class="dropdown-item">Šaulys</div>
+                <div class="dropdown-item">Ožiaragis</div>
+                <div class="dropdown-item">Vandenis</div>
+                <div class="dropdown-item">Žuvys</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="trukme">Apytikslė kelionės trukmė</label>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle">
+                <span class="dropdown-text">Pasirinkite</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">1 savaitė</div>
+                <div class="dropdown-item">2 savaitės</div>
+                <div class="dropdown-item">1 mėnuo</div>
+                <div class="dropdown-item">3 mėnesiai</div>
+                <div class="dropdown-item">6 mėnesiai</div>
+                <div class="dropdown-item">1 metai</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="metulaikas">Mėgstamiausias metų laikas</label>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle">
+                <span class="dropdown-text">Pasirinkite</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">Pavasaris</div>
+                <div class="dropdown-item">Vasara</div>
+                <div class="dropdown-item">Ruduo</div>
+                <div class="dropdown-item">Žiema</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="gyvybes-formos">Ar norėtumėte aplankyti vietas, kuriose gali būti nežemiškos gyvybės formos?</label>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle">
+                <span class="dropdown-text">Pasirinkite</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">Taip</div>
+                <div class="dropdown-item">Ne</div>
+                <div class="dropdown-item">Nesu tikras/tikra</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="vietos">Ar jus domina istorinės ir mokslinės vietos Saulės sistemoje?</label>
+            <p class="info-text">(Marso roverių nusileidimo vietos, astronautų palikti objektai, galimos ateivių gyvenvietės vietos)</p>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle">
+                <span class="dropdown-text">Pasirinkite</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">Labai domina</div>
+                <div class="dropdown-item">Šiek tiek domina</div>
+                <div class="dropdown-item">Nedomina</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="tikslas">Koks kelionės tikslas?</label>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle">
+                <span class="dropdown-text">Pasirinkite</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">Pramoginis</div>
+                <div class="dropdown-item">Mokslinis</div>
+                <div class="dropdown-item">Darbinis</div>
+                <div class="dropdown-item">Edukacinis</div>
+                <div class="dropdown-item">Dvasinis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-section">
+          <img src="/api/placeholder/250/250" alt="Neptūnas" class="planet-image">
+          <div class="planet-info">
+            <h2>Neptūnas</h2>
+            <p>Kelionė į tolimąjį Neptūną.</p>
+            <p>250mln AU</p>
+          </div>
+          
+          <div class="button-group">
+            <button class="primary">Redaguoti kelionę</button>
+            <button class="deleteBtn">Trinti kelionę</button>
+          </div>
+        </div>
+      </div>
+      <script src="scirpts/client_form.js"></script>
+</body>
+</html>
