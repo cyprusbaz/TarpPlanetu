@@ -206,6 +206,25 @@ body {
     color: black;
     border: none;
   }
+
+  .employee-card {
+    background-color: rgba(255, 255, 255, 0.07); /* šviesiai balkvas permatomas */
+    border-radius: 12px;
+    /* backdrop-filter: blur(4px); /* optional – suteikia „frosted glass“ efektą */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* subtilus švytėjimas */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Pasirinktinai – efektas užvedus pelę */
+  .employee-card:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  .modal-content.custom-modal {
+    background-color: rgba(17, 24, 103, 0.80);
+    border: none;
+    color: white;
+  }
   
   
   
