@@ -240,8 +240,15 @@ body {
   display: none;
 }
 .active{
-  display: none;
+  display: block;
+  transition: bottom 0.3 ease;
 }
+.faq-content {
+  transition: bottom 0.5s ease;
+  color: var(--dark-blue);
+  font-size: 20px;
+}
+
 .faq-toggle {
   position: absolute;
   width: 40px;
@@ -252,7 +259,7 @@ body {
 
 .toggle-vertical,
 .toggle-horizontal {
-  background-color: #171e6b;
+  background-color: var(--dark-blue);
   position: absolute;
 }
 
@@ -316,6 +323,18 @@ body {
   font-size: 30px;
   text-transform: uppercase;
 }
+.newsletter-button{
+  margin-top: 20px;
+  padding: 10px 5px;
+  font-size: 2.2rem;
+  width: 100%;
+  border-radius: 50px;
+  background-color: var(--dark-blue);
+  color: var(--yellow);
+}
+.newsletter-button:hover{
+  opacity: 80%;
+}
 
 /* Footer Styles */
 .main-footer {
@@ -328,22 +347,29 @@ body {
   max-width: 1083px;
   margin: 0 auto;
 }
-
+.footer-header{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
 .footer-title {
   color: #fff;
   font-family: Aclonica, sans-serif;
   font-size: 45px;
   text-transform: uppercase;
 }
-
+.footer-logo{
+  margin-right: 10px;
+}
 .footer-subtitle {
   color: #fff;
   font-family: Aclonica, sans-serif;
   font-size: 15px;
   text-transform: uppercase;
-  text-align: center;
+  text-align: right;
   margin-top: 6px;
   min-height: 26px;
+  width: 95%;
 }
 
 .footer-content {
@@ -365,14 +391,17 @@ body {
   border-radius: 30px;
   color: #fff;
   font-family: Aclonica, sans-serif;
-  font-size: 45px;
+  font-size: 35px;
   text-transform: uppercase;
   padding: 12px 15px;
   border: none;
   cursor: pointer;
   min-width: 281px;
 }
-
+.cta-button:hover{
+  opacity:80%;
+  color: var(--yellow);
+}
 .social-links {
   display: flex;
   align-items: center;
