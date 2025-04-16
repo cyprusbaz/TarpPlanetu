@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+.logo-text {
+    margin-left: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sign-up-btn {
+    background-color: #2d38a1;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Main content */
+.content {
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.search-input {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #ffcc00;
+    background-color: transparent;
+    color: white;
+    width: 200px;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* Trip list */
+.trip-list {
+    margin-top: 20px;
+}
+
+.trip-item {
+    border-bottom: 1px solid #ffcc00;
+    padding: 20px 0;
+}
+
+.trip-title {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.trip-description {
+    margin-bottom: 10px;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.trip-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.trip-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-confirm {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.btn-cancel {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Footer */
+footer {
+    padding: 50px 0 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
