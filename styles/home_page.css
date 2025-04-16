@@ -210,7 +210,7 @@ body {
 }
 
 .faq-title {
-  color: #171e6b;
+  color: var(--dark-blue);
   font-family: Aclonica, sans-serif;
   font-size: 45px;
   text-align: center;
@@ -229,7 +229,7 @@ body {
 }
 
 .faq-question {
-  color: #171e6b;
+  color: var();
   font-size: 25px;
   font-weight: 700;
   flex-grow: 1;
