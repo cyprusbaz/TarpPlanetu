@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisijungimas ir registracija</title>
+    <link rel="stylesheet" href="styles/logIn&Registration.css">
+</head>
+<body>
+    <a href="index.html" class="back_to_home_Page">&lt;- Grįžti į pagrindinį puslapį</a>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="login-email">El.paštas</label>
+                    <input type="email" id="login-email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Slaptažodis</label>
+                    <input type="password" id="login-password" required placeholder="Enter your password">
+                </div>
+                <button type="submit">Login</button>
+                <div class="form-footer">
+                    <p>Neturi paskyros? <a href="#" id="show-register">Registruokis čia</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-container hide" id="register-form">
+            <h2>Register</h2>
+            <form>
+                <div class="form-group">
+                    <label for="register-name">Vardas ir Pavardė</label>
+                    <input type="text" id="register-name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="register-email">El.paštas</label>
+                    <input type="email" id="register-email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Slaptažodis</label>
+                    <input type="password" id="register-password" required placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Pakartoti slaptažodį</label>
+                    <input type="password" id="register-confirm-password" required placeholder="Confirm your password">
+                </div>
+                <button type="submit">Registracija</button>
+                <div class="form-footer">
+                    <p>Ar turi paskyrą? <a href="#" id="show-login">Prisijunk čia</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="scirpts/login&registration.js"></script>
+</body>
+</html>

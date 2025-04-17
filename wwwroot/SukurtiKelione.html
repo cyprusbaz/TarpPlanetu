@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- viewport padaro responsive vaizda-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../wwwroot/css/style.css"> <!--kadangi failas Views/home -->
+</head>
+
+
+<body class="bg-dark text-white">
+<!-- navigation banneris -->
+<nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white fw-bold" href="#">
+      TARPLANETŲ 
+      <a href="#">
+        <img src="img/rocket.png" alt="Raketa" class="rocket-icon">
+      </a>
+    </a>
+
+    <div class="d-flex align-items-center ms-auto">
+      <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+      <a href="#" class="text-white text-decoration-none me-3 fw-bold cursor: pointer;">Sukurti kelionės planą</a>
+      <a href="#" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
+      <a href="#">
+        <img src="img/profile.png" alt="Profilis" class="profile-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="full-bg py-5" style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover;">
+  
+  <div class="bg-overlay"></div> <!-- patamsinimui pacio fono-->
+  <!-- gauti rekomendacija mygtukas-->
+  <div class="px-4 pb-4">
+    <a href="#" class="btn btn-warning fw-bold rounded-pill px-4">Gauti rekomendaciją</a>
+  </div>
+  
+  <div class="container position-relative"> <!--</div> style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover;"> -->
+    
+  <div class="form-box p-4 mt-4">
+    <div class="mb-4">
+      <label for="kelionesTikslas" class="form-label fw-bold text-white">KELIONĖS TIKSLAS</label>
+    </div>
+
+    <div class="d-flex justify-content-between flex-wrap mb-4"> <!-- flex-wrap perkels i kita eilute, ar tikrai good ideja?-->
+      <div class="text-center">
+        <img src="../wwwroot/img/mars.png" alt="Marsas" class="planet-img" /> <!-- class ateina jau is css kodo, kur aprasyta planet -->
+        <div>Marsas</div>
+      </div>
+      <div class="text-center">
+        <img src="../wwwroot/img/mercury.png" alt="Merkurijus" class="planet-img" /> <!-- alt reikalingas jei paveiksliukas neuzsikrauna-->
+        <div>Merkurijus</div>
+      </div>
+      <div class="text-center">
+        <img src="../wwwroot/img/moon.png" alt="Mėnulis" class="planet-img" />
+        <div>Mėnulis</div>
+      </div>
+      <div class="text-center">
+        <img src="../wwwroot/img/VENERA.png" alt="Venera" class="planet-img" />
+        <div>Venera</div>
+      </div>
+      <div class="text-center">
+        <img src="../wwwroot/img/JUPITER.png" alt="Jupiteris" class="planet-img" />
+        <div>Jupiteris</div>
+      </div>
+      <div class="text-center">
+        <img src="../wwwroot/img/saturn.jpg" alt="Saturnas" class="planet-img" />
+        <div>Saturnas</div>
+      </div>
+      <div class="text-center">
+        <img src="../wwwroot/img/URANUS.png" alt="Uranas" class="planet-img" />
+        <div>Uranas</div>
+      </div>
+      <div class="text-center">
+        <img src="../wwwroot/img/NEPTUNE.jpg" alt="Neptūnas" class="planet-img" />
+        <div>Neptūnas</div>
+      </div>
+    </div>
+  
+
+    <div class="mb-4 d-flex align-items-center">
+      <label for="kelionesData" class="form-label fw-bold text-white me-3 mb-0">KELIONĖS DATA</label>
+      <input type="date" id="kelionesData" class="form-control custom-input w-auto" />
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label fw-bold text-white d-block">KELIONĖS BENDRAKELEIVIAI</label>
+    
+      <div class="d-flex gap-3 flex-wrap">
+        <input type="radio" class="btn-check" name="bendrakeleiviai" id="draugai" autocomplete="off">
+        <label class="btn custom-radio-btn flex-fill" for="draugai">Noriu keliauti su draugais / šeima</label>
+    
+        <input type="radio" class="btn-check" name="bendrakeleiviai" id="nepazistami" autocomplete="off">
+        <label class="btn custom-radio-btn flex-fill" for="nepazistami">Bendrakeleiviai gali būti nepažįstami</label>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label fw-bold text-white">VIEŠBUTIS</label>
+      <div class="d-flex justify-content-between flex-wrap">
+        <img src="img/hotels/ekonomiskas.png" alt="Viešbutis ekonominis" class="hotel-img">
+        <img src="img/hotels/modernus.png" alt="Viešbutis modernus" class="hotel-img">
+      </div>
+    </div>
+
+    <div class="mb-4 d-flex align-items-center justify-content-between">
+      <label for="maistoDieta" class="form-label fw-bold text-white me-3 mb-0">MAISTO DIETA</label>
+      <div class="dropdown-wrapper flex-grow-1">
+        <select id="maistoDieta" class="form-control custom-input w-100">
+          <option value="vegetariska">Vegetariška</option>
+          <option value="be-dietos">Be dietos</option>
+          <option value="veganiska">Veganiška</option>
+          <option value="keto">Keto</option>
+        </select>
+        <span class="dropdown-icon">&#9662;</span>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label fw-bold text-white">VIETINIO GYVŪNĖLIO GLOBA</label>
+      <div class="d-flex justify-content-between flex-wrap">
+        <img src="img/pets/lapiukas.png" alt="Lapiukas" class="pet-img">
+        <img src="img/pets/ateiviukas.png" alt="ateiviukas" class="pet-img">
+        <img src="img/pets/lapiukas2.png" alt="Lapiukas" class="pet-img">
+        <img src="img/pets/cute.png" alt="Mielas padarėlis" class="pet-img">
+        <img src="img/pets/drieziukas.png" alt="Driežiukas" class="pet-img">
+        <img src="img/pets/suniukas.png" alt="Šuniukas" class="pet-img">
+        <img src="img/pets/varliukas.png" alt="Varliukas" class="pet-img">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label fw-bold text-white">PAPILDOMOS VEIKLOS</label>
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="d-flex gap-3 flex-wrap">
+          <input type="radio" class="btn-check" name="veiklos" id="zygis" autocomplete="off">
+          <label class="btn custom-radio-btn flex-fill" for="zygis">Žygis po kalnus</label>
+      
+          <input type="radio" class="btn-check" name="veiklos" id="sportas" autocomplete="off">
+          <label class="btn custom-radio-btn flex-fill" for="sportas">Sporto treniruotė su ateiviais</label>
+
+          <input type="radio" class="btn-check" name="veiklos" id="protiniai" autocomplete="off">
+          <label class="btn custom-radio-btn flex-fill" for="protiniai">Iškasenų laboratorija</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="d-flex align-items-center justify-content-end mt-4">
+      <label for="kaina" class="text-white fw-bold me-2 mb-0">KAINA:</label>
+    
+      <input type="text" id="kaina" class="form-control kaina-input me-3" placeholder="€" />
+    
+      <button class="btn btn-warning fw-bold rounded-pill px-4">IŠSAUGOTI PLANĄ</button>
+    </div>  
+</div>
+  
+</div>
+</div>
+
+<div class="bg-black text-white py-5">
+  <div class="container">
+    <h5 class="fw-bold mb-3">REIKIA PAGALBOS KURIANT KELIONĘ?</h5>
+    <p class="mb-2">
+      Susisiekite su mumis: 
+      <a href="mailto:pagalba@tarpplanetu.lt" class="text-info text-decoration-none">pagalba@tarpplanetu.lt</a>
+    </p>
+    <p class="mb-0">
+      Mūsų komanda pasiruošusi padėti jums suplanuoti nepriekaištingą skrydį!
+    </p>
+  </div>
+</div>
+
