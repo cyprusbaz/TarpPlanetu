@@ -10,7 +10,7 @@ body {
       radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 15px 15px;
   }
-  
+
   .container {
     max-width: 1000px;
     margin: 0 auto;
