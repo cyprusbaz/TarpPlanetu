@@ -103,7 +103,6 @@ body {
   }
   
   .planet-image {
-    width: 120px;
     height: 120px;
     border-radius: 50%;
     margin: 0 auto;
@@ -155,12 +154,10 @@ body {
   
   /* Planet specific styles */
   #uranus .planet-image {
-    background: linear-gradient(135deg, #42C3D9, #01796F);
     box-shadow: 0 0 30px rgba(66, 195, 217, 0.4);
   }
   
   #neptune .planet-image {
-    background: linear-gradient(135deg, #235fc7, #4f29db);
     box-shadow: 0 0 30px rgba(79, 41, 219, 0.4);
   }
   
