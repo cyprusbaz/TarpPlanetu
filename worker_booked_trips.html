@@ -3,44 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TARP PLANETU - Booked Trips</title>
+    <title>Užsakytos kelionės</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/worker_booked_trips.css">
-    <link href="wwwroot/https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <body class="bg-dark text-white">
-            <!-- navigation banneris -->
-            <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
-              <div class="container-fluid">
-                <a class="navbar-brand text-white fw-bold" href="#">
-                  TARPLANETŲ 
-                  <a href="#">
-                    <img src="img/rocket.png" alt="Raketa" class="rocket-icon">
-                  </a>
+        <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+            <div class="container-fluid">
+              <a  class="navbar-brand text-white fw-bold" href="#">
+                TARPLANETŲ 
+                <a href="#">
+                  <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
                 </a>
-            
-                <div class="d-flex align-items-center ms-auto">
-                  <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
-                  <a href="#" class="text-white text-decoration-none me-3 fw-bold cursor: pointer;">Sukurti kelionės planą</a>
-                  <a href="#" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
-                  <a href="#">
-                    <img src="img/profile.png" alt="Profilis" class="profile-icon">
-                  </a>
-                </div>
+              </a>
+          
+              <div class="d-flex align-items-center ms-auto">
+                <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+                <a href="http://127.0.0.1:5500/worker_booked_trips.html#" class="text-white fw-bold text-decoration-none me-3 cursor: pointer;">Užsakytos kelionės</a>
+                <a href="#">
+                  <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+                </a>
               </div>
-            </nav>
+            </div>
+          </nav>
       </header>
-    <div class="container">    
+    <div style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover;">    
         <main class="content">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h1>Užsakytos kelionės</h1>
+                <h1 class="container ">Užsakytos kelionės</h1>
                 <div class="search-bar">
                     <input type="text" class="search-input" placeholder="Paieška...">
                 </div>
             </div>
             
-            <div class="trip-list">
+            <div class="container form-box" class="trip-list" >
                 <div class="trip-item">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div>
@@ -85,46 +82,19 @@
             </div>
         </main>
         
-        <footer class="main-footer">
-            <div class="footer-container">
-              <div class="footer-header">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a408b2e58fa1f26890266f0456c0a856afcc7ee3?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Company Logo" class="footer-logo">
-              <span class="footer-title">
-                Pasiruošę pradėti kelionę?</span>
-              </div>
-              <p class="footer-subtitle">Sekite mus mūsų socialiniuose tinkluose</p>
-              <div class="footer-content">
-                <div class="footer-actions">
-                  <button class="cta-button">Spausk čia</button>
-                  <div class="social-links">
-                    <a href="#" class="social-link">
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd0c293f9b49c5624e29cb89a584587573c9e788?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                    </a>
-                    <a href="#" class="social-link">
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c1ae44dc0b354499d7b9623e9ef13345763e836?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                    </a>
-                    <a href="#" class="social-link">
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/45de3506f94dd366d8c841b15f94c5d2f2a36403?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                    </a>
-                    <a href="#" class="social-link">
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/05315d37ed596f5a989670cbda9d71c2531392bb?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                    </a>
-                  </div>
-                </div>
-          
-                <div class="footer-bottom">
-                  <div class="contact-info">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/73252c861fd3f6b0f7f2c1a65134f6f22e725dff?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Email Icon" class="email-icon" />
-                    <span class="email-address">info@tarplanetu.siu</span>
-                  </div>
-                  <div class="footer-links">
-                    <a href="#privacy" class="footer-link">Privatumo politika</a>
-                    <a href="#terms" class="footer-link">Taisyklės & sąlygos</a>
-                  </div>
-                </div>
-              </div>
+        <div class="bg-black text-white py-5">
+            <div class="container">
+              <h5 class="fw-bold mb-3" style="font-size: 20px;">REIKIA PAGALBOS KURIANT KELIONĘ?</h5>
+              <p class="mb-2">
+                Susisiekite su mumis:
+                <a href="mailto:pagalba@tarpplanetu.lt" class="text-info text-decoration-none">pagalba@tarpplanetu.lt</a>
+              </p>
+              <p class="mb-0">
+                Mūsų komanda pasiruošusi padėti jums suplanuoti nepriekaištingą skrydį!
+              </p>
             </div>
-          </footer>
+          </div>    
+        
     </div>
 </body>
 </html>
