@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/client_my_trips.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <div class="solar-system">
+            <img src="/api/placeholder/500/150" alt="Saulės sistema">
+          </div>
+          <div class="action-buttons">
+            <button class="action-button">Sudaryti kelionės planą</button>
+            <button class="action-button">Peržiūrėti kelionių sąrašą</button>
+          </div>
+        </div>
+        
+        <h2 class="section-title">Kelionių krepšelis</h2>
+        
+        <div class="planet-grid">
+          <div class="planet-card" id="uranus">
+            <div class="planet-header">URANAS</div>
+            <div class="planet-description">Kelionė į šaltąjį Uraną.</div>
+            <div class="planet-distance">500mln AU</div>
+            
+            <div class="planet-image-container">
+              <div class="planet-image"></div>
+              <div class="planet-name">Uranas</div>
+            </div>
+            
+            <div class="planet-status">Kelionė jau įvyko!</div>
+          </div>
+          
+          <div class="planet-card" id="neptune">
+            <div class="planet-header">NEPTŪNAS</div>
+            <div class="planet-description">Kelionė į tolimąjį Neptūną.</div>
+            <div class="planet-distance">250kg Au</div>
+            
+            <div class="planet-image-container">
+              <div class="planet-image"></div>
+              <div class="planet-name">Neptūnas</div>
+            </div>
+            
+            <div class="planet-status">Kelionė jau užsakyta.</div>
+            
+            <div class="planet-actions">
+              <button class="planet-button">Apmokėti kelionę</button>
+            </div>
+          </div>
+          
+          <div class="planet-card" id="jupiter">
+            <div class="planet-header">JUPITERIS</div>
+            <div class="planet-description">Kelionė į didįjį Jupiterį.</div>
+            <div class="planet-distance">550kg Au</div>
+            
+            <div class="planet-image-container">
+              <div class="planet-image"></div>
+              <div class="planet-name">Jupiteris</div>
+            </div>
+            
+            <div class="planet-actions">
+              <button class="planet-button">Užsakyti kelionę</button>
+              <button class="planet-button outline">Pašalinti kelionės planą</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="scirpts/client_my_trips.js"></script>
+</body>
+</html>
