@@ -2,46 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TARP PLANETU - Booked Trips</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Užsakytos kelionės</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/worker_booked_trips.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a408b2e58fa1f26890266f0456c0a856afcc7ee3?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="TARP PLANETU Logo">
-                <div class="logo-text">Tarp Planetu</div>
+    <header>
+        <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+            <div class="container-fluid">
+              <a  class="navbar-brand text-white fw-bold" href="#">
+                TARPLANETŲ 
+                <a href="#">
+                  <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
+                </a>
+              </a>
+          
+              <div class="d-flex align-items-center ms-auto">
+                <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+                <a href="http://127.0.0.1:5500/worker_booked_trips.html#" class="text-white fw-bold text-decoration-none me-3 cursor: pointer;">Užsakytos kelionės</a>
+                <a href="#">
+                  <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+                </a>
+              </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#" class="sign-up-btn">Sign Up</a></li>
-                </ul>
-            </nav>
-        </header>
-        
+          </nav>
+      </header>
+    <div style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover; min-height: 80vh;">    
         <main class="content">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h1>Booked Trips</h1>
+                <h1 class="container ">Užsakytos kelionės</h1>
                 <div class="search-bar">
-                    <input type="text" class="search-input" placeholder="Search...">
+                    <input type="text" class="search-input" placeholder="Paieška...">
                 </div>
             </div>
             
-            <div class="trip-list">
+            <div class="container form-box" class="trip-list" >
                 <div class="trip-item">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div>
                             <h2 class="trip-title">Vardas Pavardė</h2>
                             <p class="trip-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec libero ut tortor aliquam vulputate eu eu urna?</p>
-                            <p class="trip-price">Price: 150000€</p>
+                            <p class="trip-price">Kaina: 150000€</p>
                         </div>
                         <div class="trip-actions">
-                            <button class="btn btn-confirm">Confirm</button>
-                            <button class="btn btn-cancel">Cancel</button>
+                            <button class="btn btn-confirm">Patvirtinti</button>
+                            <button class="btn btn-cancel">Atšaukti</button>
                         </div>
                     </div>
                 </div>
@@ -51,11 +57,11 @@
                         <div>
                             <h2 class="trip-title">Vardas Pavardė</h2>
                             <p class="trip-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec libero ut tortor aliquam vulputate eu eu urna?</p>
-                            <p class="trip-price">Price: 150000€</p>
+                            <p class="trip-price">Kaina: 150000€</p>
                         </div>
                         <div class="trip-actions">
-                            <button class="btn btn-confirm">Confirm</button>
-                            <button class="btn btn-cancel">Cancel</button>
+                            <button class="btn btn-confirm">Patvirtinti</button>
+                            <button class="btn btn-cancel">Atšaukti</button>
                         </div>
                     </div>
                 </div>
@@ -65,52 +71,31 @@
                         <div>
                             <h2 class="trip-title">Vardas Pavardė</h2>
                             <p class="trip-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec libero ut tortor aliquam vulputate eu eu urna?</p>
-                            <p class="trip-price">Price: 150000€</p>
+                            <p class="trip-price">Kaina: 150000€</p>
                         </div>
                         <div class="trip-actions">
-                            <button class="btn btn-confirm">Confirm</button>
-                            <button class="btn btn-cancel">Cancel</button>
+                            <button class="btn btn-confirm">Patvirtinti</button>
+                            <button class="btn btn-cancel">Atšaukti</button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-        
-        <footer>
-            <div class="footer-top">
-                <div style="padding-left: 70px;" class="logo">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a408b2e58fa1f26890266f0456c0a856afcc7ee3?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="TARP PLANETU Logo">
-                </div>
-                <div>
-                    <p>FOLLOW US ON OUR SOCIAL NETWORKS</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd0c293f9b49c5624e29cb89a584587573c9e788?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                          </a>
-                          <a href="#" class="social-link">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c1ae44dc0b354499d7b9623e9ef13345763e836?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                          </a>
-                          <a href="#" class="social-link">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/45de3506f94dd366d8c841b15f94c5d2f2a36403?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                          </a>
-                          <a href="#" class="social-link">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/05315d37ed596f5a989670cbda9d71c2531392bb?placeholderIfAbsent=true&apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Social Media" class="social-icon" />
-                          </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="contact-email">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/73252c861fd3f6b0f7f2c1a65134f6f22e725dff?placeholderIfAbsent=true&amp;apiKey=301d0e384ba941d0b7ee28af3de397e1" alt="Email Icon" class="email-icon">
-                    <a href="mailto:info@tarplanetu.siu">info@tarplanetu.siu</a>
-                </div>
-                <div>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                </div>
-            </div>
-        </footer>
     </div>
+    <footer>
+        <div class="bg-black text-white py-5">
+            <div class="container">
+            <h5 class="fw-bold mb-3" style="font-size: 20px;">REIKIA PAGALBOS KURIANT KELIONĘ?</h5>
+            <p class="mb-2">
+                Susisiekite su mumis:
+                <a href="mailto:pagalba@tarpplanetu.lt" class="text-info text-decoration-none">pagalba@tarpplanetu.lt</a>
+            </p>
+            <p class="mb-0">
+                Mūsų komanda pasiruošusi padėti jums suplanuoti nepriekaištingą skrydį!
+            </p>
+            </div>
+        </div> 
+    </footer>
+    <script src="scirpts/worker_booked_trips.js"></script>
 </body>
 </html>
