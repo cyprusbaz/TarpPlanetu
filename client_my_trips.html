@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/client_my_trips.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white fw-bold" href="#">
+            TARPLANETŲ 
+            <a href="#">
+              <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
+            </a>
+          </a>
+      
+          <div class="d-flex align-items-center ms-auto">
+            <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+            <a href="#" class="text-white text-decoration-none me-3 fw-bold cursor: pointer;">Sukurti kelionės planą</a>
+            <a href="#" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
+            <a href="#">
+              <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+            </a>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="header">
+          <div class="solar-system">
+            <img src="/assets/images/image 10.png" alt="Saulės sistema">
+          </div>
+          <div class="action-buttons">
+            <button class="action-button">Sudaryti kelionės planą</button>
+            <button class="action-button">Peržiūrėti kelionių sąrašą</button>
+          </div>
+        </div>
+        
+        <h2 class="section-title">Kelionių krepšelis</h2>
+        
+        <div class="planet-grid">
+          <div class="planet-card" id="uranus">
+            <div class="planet-header">URANAS</div>
+            <div class="planet-description">Kelionė į šaltąjį Uraną.</div>
+            <div class="planet-distance">500mln AU</div>
+            
+            <div class="planet-image-container">
+              <img src="wwwroot/img/URANUS.png" alt="uranus-photo" class="planet-image">
+              <div class="planet-name">Uranas</div>
+            </div>
+            
+            <div class="planet-status">Kelionė jau įvyko!</div>
+          </div>
+          
+          <div class="planet-card" id="neptune">
+            <div class="planet-header">NEPTŪNAS</div>
+            <div class="planet-description">Kelionė į tolimąjį Neptūną.</div>
+            <div class="planet-distance">250kg Au</div>
+            
+            <div class="planet-image-container">
+                <img src="wwwroot/img/NEPTUNE.jpg" alt="neptune" class="planet-image">
+              <div class="planet-name">Neptūnas</div>
+            </div>
+            
+            <div class="planet-status">Kelionė jau užsakyta.</div>
+            
+            <div class="planet-actions">
+              <button class="planet-button">Apmokėti kelionę</button>
+            </div>
+          </div>
+          
+          <div class="planet-card" id="jupiter">
+            <div class="planet-header">JUPITERIS</div>
+            <div class="planet-description">Kelionė į didįjį Jupiterį.</div>
+            <div class="planet-distance">550kg Au</div>
+            
+            <div class="planet-image-container">
+                <img src="wwwroot/img/JUPITER.png" alt="uranus-photo" class="planet-image">
+              <div class="planet-name">Jupiteris</div>
+            </div>
+            
+            <div class="planet-actions">
+              <button class="planet-button">Užsakyti kelionę</button>
+              <button class="planet-button outline">Pašalinti kelionės planą</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="scirpts/client_my_trips.js"></script>
+</body>
+</html>
