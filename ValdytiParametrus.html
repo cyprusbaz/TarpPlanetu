@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- viewport padaro responsive vaizda-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css"> <!--kadangi failas Views/home -->
+</head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Darbuotojai</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="bg-dark text-white">
+  <!-- navigation banneris -->
+  <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="#">
+        TARPLANETŲ
+        <a href="#">
+          <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
+        </a>
+      </a>
+      <div class="d-flex align-items-center ms-auto">
+        <a href="#" class="text-white text-decoration-none me-3 fw-bold">Darbuotojai</a>
+        <a href="#">
+          <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- pagrindinis fonas -->
+  <div class="full-bg py-5" style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover;">
+    <div class="bg-overlay"></div>
+    <div class="container position-relative">
+      <div class="form-box p-4 mt-4">
+        <div class="container my-4">
+         
+<!-- planetos -->
+<h4 class="fw-bold mb-3">PLANETOS</h4>
+
+<div class="table-responsive mb-3" style="max-height: 300px; overflow-y: auto;">
+  <table class="table align-middle" style="background-color: rgb(36, 71, 143); color: white;">
+    <thead>
+      <tr>
+        <th>Pavadinimas</th>
+        <th>Veiksmai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Marsas -->
+      <tr class="planet-mars">
+        <td>Marsas</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetModalMarsas">Peržiūrėti</button>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetEditModalMarsas">Redaguoti</button>
+            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletePlanetModal" data-planet-id="mars">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <!-- Saturnas -->
+      <tr class="planet-saturn">
+        <td>Saturnas</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetModalSaturn">Peržiūrėti</button>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetEditModalSaturn">Redaguoti</button>
+            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletePlanetModal" data-planet-id="saturn">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <!-- Venera -->
+      <tr class="planet-venera">
+        <td>Venera</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetModalVenera">Peržiūrėti</button>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetEditModalVenera">Redaguoti</button>
+            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletePlanetModal" data-planet-id="venera">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <!-- Jupiteris -->
+      <tr class="planet-jupiter">
+        <td>Jupiteris</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetModalJupiter">Peržiūrėti</button>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetEditModalJupiter">Redaguoti</button>
+            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletePlanetModal" data-planet-id="jupiter">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <!-- Merkurijus -->
+      <tr class="planet-mercury">
+        <td>Merkurijus</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetModalMercury">Peržiūrėti</button>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetEditModalMercury">Redaguoti</button>
+            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletePlanetModal" data-planet-id="mercury">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <!-- Neptūnas -->
+      <tr class="planet-neptune">
+        <td>Neptūnas</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetModalNeptune">Peržiūrėti</button>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#planetEditModalNeptune">Redaguoti</button>
+            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletePlanetModal" data-planet-id="neptune">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mb-5 text-center">
+    <button class="btn btn-success fw-bold px-5" data-bs-toggle="modal" data-bs-target="#planetAddModal">Pridėti planetą</button>
+  </div>
+  
+
+      <!-- Laisvalaikio veiklos -->
+      <h4 class="fw-bold mb-3">Laisvalaikio veiklos</h4>
+      <div class="table-responsive mb-3" style="max-height: 250px; overflow-y: auto;">
+        <table class="table table-dark table-striped align-middle">
+          <thead>
+            <tr>
+              <th>Pavadinimas</th>
+              <th>Kaina</th>
+              <th>Planeta</th>
+              <th>Veiksmai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mėnulio pasivaikščiojimas</td>
+              <td>500 €</td>
+              <td>Mėnulis</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm me-2">Redaguoti</button>
+                <button class="btn btn-outline-danger btn-sm">Šalinti</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Saturno žiedų turas</td>
+              <td>1200 €</td>
+              <td>Saturnas</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm me-2">Redaguoti</button>
+                <button class="btn btn-outline-danger btn-sm">Šalinti</button>
+              </td>
+            </tr>
+            <!-- Pridėsi daugiau veiklų -->
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <button class="btn btn-success fw-bold">Pridėti laisvalaikio veiklą</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- -->
+
+  <div class="bg-black text-white py-5">
+    <div class="container">
+      <h5 class="fw-bold mb-3">REIKIA PAGALBOS KURIANT KELIONĘ?</h5>
+      <p class="mb-2">
+        Susisiekite su mumis:
+        <a href="mailto:pagalba@tarpplanetu.lt" class="text-info text-decoration-none">pagalba@tarpplanetu.lt</a>
+      </p>
+      <p class="mb-0">
+        Mūsų komanda pasiruošusi padėti jums suplanuoti nepriekaištingą skrydį!
+      </p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <div class="modal fade" id="planetModalMarsas" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Marsas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <img src="assets/mars.png" class="rounded-circle img-fluid" style="width: 150px; height: auto;">
+        </div>
+          <div>
+            <p><strong>Temperatūra:</strong> -63°C</p>
+            <p><strong>Paros trukmė:</strong> 24.6 valandos</p>
+            <p><strong>Atmosfera:</strong> 95% anglies dioksido</p>
+            <p><strong>Palydovai:</strong> Fobas, Deimas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="modal fade" id="planetEditModalMarsas" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Redaguoti - Marsas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <label for="planetImageMarsas">
+                <img src="assets/mars.png" id="previewImageMarsas" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+              </label>
+              <input type="file" id="planetImageMarsas" accept="image/*" style="display: none;" onchange="previewMarsasImage(event)">
+            </div>
+            <div class="flex-grow-1">
+
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Pavadinimas:</label>
+                <input type="text" class="form-control flex-grow-1" value="Marsas">
+              </div>
+
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Temperatūra:</label>
+                <input type="text" class="form-control flex-grow-1" value="-63°C">
+              </div>
+
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Paros trukmė:</label>
+                <input type="text" class="form-control flex-grow-1" value="24.6 valandos">
+              </div>
+
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Atmosfera:</label>
+                <input type="text" class="form-control flex-grow-1" value="95% anglies dioksido">
+              </div>
+
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Palydovai:</label>
+                <input type="text" class="form-control flex-grow-1" value="Fobas, Deimas">
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn btn-success">Išsaugoti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+  <script>
+    function previewMarsasImage(event) {
+        const input = event.target;
+        const reader = new FileReader();
+        reader.onload = function(){
+            const preview = document.getElementById('previewImageMarsas');
+            preview.src = reader.result;
+        };
+        if(input.files[0]){
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
+    
+
+    <!-- Patvirtinimo modalas -->
+    <!-- Patvirtinimo modalas be X mygtuko -->
+<div class="modal fade" id="deletePlanetModal" tabindex="-1" aria-labelledby="deletePlanetLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deletePlanetLabel">Patvirtinimas</h5>
+        </div>
+        <div class="modal-body">
+          Ar tikrai norite pašalinti šią planetą?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="button" class="btn btn-danger" id="confirmDeletePlanet">Taip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      
+
+  <script>
+    let planetToDelete = null;
+  
+    // Paspaudus ant "Šalinti" mygtuko, nustatyti planetos ID
+    document.querySelectorAll('.btn-outline-danger').forEach(button => {
+      button.addEventListener('click', function (e) {
+        const planetId = e.target.getAttribute('data-planet-id');
+        planetToDelete = planetId;
+        console.log(`Pasirinkta planetos ID: ${planetToDelete}`); // Patikrinimui
+      });
+    });
+  
+    // Paspaudus "Taip" patvirtinimo lange, pašalinti planetą ir uždaryti modalą
+    document.getElementById('confirmDeletePlanet').addEventListener('click', function () {
+      if (planetToDelete) {
+        // Pašalinti planetos eilutę pagal jos ID (pavyzdžiui, Marsui bus planet-mars)
+        document.querySelector(`.planet-${planetToDelete}`).remove();
+        
+        // Uždaryti modalą
+        const deleteModal = new bootstrap.Modal(document.getElementById('deletePlanetModal'));
+        deleteModal.hide();
+        
+        // Išvalyti planetos ID
+        planetToDelete = null;
+      }
+    });
+  </script>
+  
+  
+<tr class="planet-mars">
+    <td>Marsas</td>
+    <td>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm">Redaguoti</button>
+        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletePlanetModal" data-planet-id="mars">Šalinti</button>
+      </div>
+    </td>
+  </tr>
+    
+
+  <!-- Saturno Modalas -->
+<div class="modal fade" id="planetModalSaturn" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Saturnas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <img src="assets/saturn.jpg" class="rounded-circle img-fluid" style="width: 150px; height: auto;">
+          </div>
+          <div>
+            <p><strong>Temperatūra:</strong> -178°C</p>
+            <p><strong>Paros trukmė:</strong> 10.7 valandos</p>
+            <p><strong>Atmosfera:</strong> 96% vandenilio</p>
+            <p><strong>Palydovai:</strong> Titanas, Rea, Iapetus</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jupiterio Modalas -->
+<div class="modal fade" id="planetModalJupiter" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Jupiteris</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <img src="assets/JUPITER.png" class="rounded-circle img-fluid" style="width: 150px; height: auto;">
+          </div>
+          <div>
+            <p><strong>Temperatūra:</strong> -108°C</p>
+            <p><strong>Paros trukmė:</strong> 9.9 valandos</p>
+            <p><strong>Atmosfera:</strong> 90% vandenilio</p>
+            <p><strong>Palydovai:</strong> Europa, Io, Ganimedas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Merkurijaus Modalas -->
+<div class="modal fade" id="planetModalMercury" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Merkurijus</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <img src="assets/mercury.png" class="rounded-circle img-fluid" style="width: 150px; height: auto;">
+          </div>
+          <div>
+            <p><strong>Temperatūra:</strong> 430°C</p>
+            <p><strong>Paros trukmė:</strong> 58.6 valandos</p>
+            <p><strong>Atmosfera:</strong> Be atmosferos</p>
+            <p><strong>Palydovai:</strong> Nėra</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Neptūno Modalas -->
+<div class="modal fade" id="planetModalNeptune" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Neptūnas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <img src="assets/NEPTUNE.jpg" class="rounded-circle img-fluid" style="width: 150px; height: auto;">
+          </div>
+          <div>
+            <p><strong>Temperatūra:</strong> -200°C</p>
+            <p><strong>Paros trukmė:</strong> 16.1 valandos</p>
+            <p><strong>Atmosfera:</strong> Vandenilis, helis</p>
+            <p><strong>Palydovai:</strong> Tritonas, Nereidas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Saturno Redagavimo Modalas -->
+<div class="modal fade" id="planetEditModalSaturn" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Redaguoti - Saturnas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <label for="planetImageSaturn">
+                <img src="assets/saturn.jpg" id="previewImageSaturn" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+              </label>
+              <input type="file" id="planetImageSaturn" accept="image/*" style="display: none;" onchange="previewSaturnImage(event)">
+            </div>
+            <div class="flex-grow-1">
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Pavadinimas:</label>
+                <input type="text" class="form-control flex-grow-1" value="Saturnas">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Temperatūra:</label>
+                <input type="text" class="form-control flex-grow-1" value="-178°C">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Paros trukmė:</label>
+                <input type="text" class="form-control flex-grow-1" value="10.7 valandos">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Atmosfera:</label>
+                <input type="text" class="form-control flex-grow-1" value="96% vandenilio">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Palydovai:</label>
+                <input type="text" class="form-control flex-grow-1" value="Titanas, Rea, Iapetus">
+              </div>
+  
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn btn-success">Išsaugoti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Veneros Redagavimo Modalas -->
+<div class="modal fade" id="planetEditModalVenera" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Redaguoti - Venera</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <label for="planetImageVenera">
+                <img src="assets/VENERA.png" id="previewImageVenera" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+              </label>
+              <input type="file" id="planetImageVenera" accept="image/*" style="display: none;" onchange="previewVeneraImage(event)">
+            </div>
+            <div class="flex-grow-1">
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Pavadinimas:</label>
+                <input type="text" class="form-control flex-grow-1" value="Venera">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Temperatūra:</label>
+                <input type="text" class="form-control flex-grow-1" value="462°C">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Paros trukmė:</label>
+                <input type="text" class="form-control flex-grow-1" value="243 valandos">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Atmosfera:</label>
+                <input type="text" class="form-control flex-grow-1" value="96.5% anglies dioksido">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Palydovai:</label>
+                <input type="text" class="form-control flex-grow-1" value="Nėra">
+              </div>
+  
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn btn-success">Išsaugoti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jupiterio Redagavimo Modalas -->
+<div class="modal fade" id="planetEditModalJupiter" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Redaguoti - Jupiteris</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <label for="planetImageJupiter">
+                <img src="assets/JUPITER.png" id="previewImageJupiter" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+              </label>
+              <input type="file" id="planetImageJupiter" accept="image/*" style="display: none;" onchange="previewJupiterImage(event)">
+            </div>
+            <div class="flex-grow-1">
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Pavadinimas:</label>
+                <input type="text" class="form-control flex-grow-1" value="Jupiteris">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Temperatūra:</label>
+                <input type="text" class="form-control flex-grow-1" value="-108°C">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Paros trukmė:</label>
+                <input type="text" class="form-control flex-grow-1" value="9.9 valandos">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Atmosfera:</label>
+                <input type="text" class="form-control flex-grow-1" value="90% vandenilio">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Palydovai:</label>
+                <input type="text" class="form-control flex-grow-1" value="Europa, Io, Ganimedas">
+              </div>
+  
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn btn-success">Išsaugoti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Merkurijaus Redagavimo Modalas -->
+<div class="modal fade" id="planetEditModalMercury" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Redaguoti - Merkurijus</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <label for="planetImageMercury">
+                <img src="assets/mercury.png" id="previewImageMercury" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+              </label>
+              <input type="file" id="planetImageMercury" accept="image/*" style="display: none;" onchange="previewMercuryImage(event)">
+            </div>
+            <div class="flex-grow-1">
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Pavadinimas:</label>
+                <input type="text" class="form-control flex-grow-1" value="Merkurijus">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Temperatūra:</label>
+                <input type="text" class="form-control flex-grow-1" value="430°C">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Paros trukmė:</label>
+                <input type="text" class="form-control flex-grow-1" value="58.6 valandos">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Atmosfera:</label>
+                <input type="text" class="form-control flex-grow-1" value="Be atmosferos">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Palydovai:</label>
+                <input type="text" class="form-control flex-grow-1" value="Nėra">
+              </div>
+  
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn btn-success">Išsaugoti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Neptūno Redagavimo Modalas -->
+<div class="modal fade" id="planetEditModalNeptune" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Redaguoti - Neptūnas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <label for="planetImageNeptune">
+                <img src="assets/NEPTUNE.jpg" id="previewImageNeptune" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+              </label>
+              <input type="file" id="planetImageNeptune" accept="image/*" style="display: none;" onchange="previewNeptuneImage(event)">
+            </div>
+            <div class="flex-grow-1">
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Pavadinimas:</label>
+                <input type="text" class="form-control flex-grow-1" value="Neptūnas">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Temperatūra:</label>
+                <input type="text" class="form-control flex-grow-1" value="-200°C">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Paros trukmė:</label>
+                <input type="text" class="form-control flex-grow-1" value="16.1 valandos">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Atmosfera:</label>
+                <input type="text" class="form-control flex-grow-1" value="Vandenilis, helis">
+              </div>
+  
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Palydovai:</label>
+                <input type="text" class="form-control flex-grow-1" value="Tritonas, Nereidas">
+              </div>
+  
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn btn-success">Išsaugoti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Veneros Peržiūros Modalas -->
+<div class="modal fade" id="planetModalVenera" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Venera</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <img src="assets/VENERA.png" class="rounded-circle img-fluid" style="width: 150px; height: auto;">
+          </div>
+          <div>
+            <p><strong>Temperatūra:</strong> 462°C</p>
+            <p><strong>Paros trukmė:</strong> 243 valandos</p>
+            <p><strong>Atmosfera:</strong> 96.5% anglies dioksido</p>
+            <p><strong>Palydovai:</strong> Nėra</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Pridėti planetą Modalas -->
+<div class="modal fade" id="planetAddModal" tabindex="-1" aria-labelledby="planetAddLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content custom-modal p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="planetAddLabel">Pridėti planetą</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <label for="planetImageAdd">
+                <img src="assets/placeholder.png" id="previewImageAdd" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+                <p>Pasirinkti nuotrauką</p>
+              </label>
+              <input type="file" id="planetImageAdd" accept="image/*" style="display: none;" onchange="previewAddImage(event)">
+            </div>
+            <div class="flex-grow-1">
+              <!-- Pavadinimas -->
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Pavadinimas:</label>
+                <input type="text" class="form-control flex-grow-1" placeholder="Įveskite planetos pavadinimą">
+              </div>
+  
+              <!-- Temperatūra -->
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Temperatūra:</label>
+                <input type="text" class="form-control flex-grow-1" placeholder="Įveskite temperatūrą">
+              </div>
+  
+              <!-- Paros trukmė -->
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Paros trukmė:</label>
+                <input type="text" class="form-control flex-grow-1" placeholder="Įveskite paros trukmę">
+              </div>
+  
+              <!-- Atmosfera -->
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Atmosfera:</label>
+                <input type="text" class="form-control flex-grow-1" placeholder="Įveskite atmosferą">
+              </div>
+  
+              <!-- Palydovai -->
+              <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+                <label class="form-label mb-0" style="width: 150px;">Palydovai:</label>
+                <input type="text" class="form-control flex-grow-1" placeholder="Įveskite palydovus">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn btn-success">Pridėti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    function previewAddImage(event) {
+      const input = event.target;
+      const reader = new FileReader();
+      reader.onload = function(){
+          const preview = document.getElementById('previewImageAdd');
+          preview.src = reader.result;
+      };
+      if(input.files[0]){
+          reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+
+
+<script>
+    // Paveikslėlio peržiūra
+    function previewAddImage(event) {
+      const input = event.target;
+      const reader = new FileReader();
+      reader.onload = function(){
+          const preview = document.getElementById('previewImageAdd');
+          preview.src = reader.result;
+      };
+      if(input.files[0]){
+          reader.readAsDataURL(input.files[0]);
+      }
+    }
+  
+    // Pridėjimo forma
+    document.getElementById('planetAddForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Sustabdyti formos siuntimą (tikriname informaciją)
+  
+      // Patikriname, ar visi laukai užpildyti
+      const planetName = document.getElementById('planetName').value;
+      const planetTemperature = document.getElementById('planetTemperature').value;
+      const planetDayLength = document.getElementById('planetDayLength').value;
+      const planetAtmosphere = document.getElementById('planetAtmosphere').value;
+      const planetMoons = document.getElementById('planetMoons').value;
+      const planetImage = document.getElementById('planetImageAdd').files[0];
+  
+      if (!planetName || !planetTemperature || !planetDayLength || !planetAtmosphere || !planetMoons || !planetImage) {
+        alert("Visi laukeliai turi būti užpildyti!");
+        return; // Neleidžia siųsti formos, jei ne visi laukai užpildyti
+      }
+  
+      // Jei visi laukeliai užpildyti, galime imituoti planetos pridėjimą (čia tik pavyzdys)
+      alert(`Planeta ${planetName} buvo pridėta su šiais duomenimis:\n
+             Temperatūra: ${planetTemperature}\n
+             Paros trukmė: ${planetDayLength}\n
+             Atmosfera: ${planetAtmosphere}\n
+             Palydovai: ${planetMoons}`);
+      
+      // Uždarome modalą po pridėjimo
+      const planetAddModal = new bootstrap.Modal(document.getElementById('planetAddModal'));
+      planetAddModal.hide();
+  
+      // Išvalome formą
+      document.getElementById('planetAddForm').reset();
+    });
+  </script>
+  
+</body>
+</html> 
