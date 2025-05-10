@@ -33,7 +33,7 @@
             <img src="/assets/images/image 10.png" alt="Saulės sistema">
           </div>
           <div class="action-buttons">
-            <button class="action-button">Sudaryti kelionės planą</button>
+            <a href="SukurtiKelione.html"><button class="action-button">Sudaryti kelionės planą</button></a>
             <button class="action-button">Peržiūrėti kelionių sąrašą</button>
           </div>
         </div>
@@ -53,7 +53,21 @@
             
             <div class="planet-status">Kelionė jau įvyko!</div>
           </div>
-          
+          <div class="planet-card" id="uranus">
+            <div class="planet-header">URANAS</div>
+            <div class="planet-description">Kelionė į šaltąjį Uraną.</div>
+            <div class="planet-distance">500mln AU</div>
+            
+            <div class="planet-image-container">
+              <img src="wwwroot/img/URANUS.png" alt="uranus-photo" class="planet-image">
+              <div class="planet-name">Uranas</div>
+            </div>
+            
+            <div class="planet-actions">
+              <button class="planet-button outline">Pašalinti kelionės planą</button>
+            </div>
+
+          </div>
           <div class="planet-card" id="neptune">
             <div class="planet-header">NEPTŪNAS</div>
             <div class="planet-description">Kelionė į tolimąjį Neptūną.</div>
@@ -68,6 +82,7 @@
             
             <div class="planet-actions">
               <button class="planet-button">Apmokėti kelionę</button>
+              <button class="planet-button cancel_trip">Atšaukti kelionę</button>
             </div>
           </div>
           
@@ -79,11 +94,47 @@
             <div class="planet-image-container">
                 <img src="wwwroot/img/JUPITER.png" alt="uranus-photo" class="planet-image">
               <div class="planet-name">Jupiteris</div>
+              
             </div>
+            <div class="planet-status">Laukiama patvirtinimo.</div>
+            
+            <div class="planet-actions">
+              <button class="planet-button cancel_trip">Atšaukti kelionę</button>
+            </div>
+          </div>
+
+          <div class="planet-card" id="jupiter">
+            <div class="planet-header">JUPITERIS</div>
+            <div class="planet-description">Kelionė į didįjį Jupiterį.</div>
+            <div class="planet-distance">550kg Au</div>
+            
+            <div class="planet-image-container">
+                <img src="wwwroot/img/JUPITER.png" alt="uranus-photo" class="planet-image">
+              <div class="planet-name">Jupiteris</div>
+              
+            </div>
+            <div class="planet-status">Neužsakyta</div>
             
             <div class="planet-actions">
               <button class="planet-button">Užsakyti kelionę</button>
+              <a href="SukurtiKelione.html"><button class="planet-button">Koreguoti kelionės planą</button></a>
               <button class="planet-button outline">Pašalinti kelionės planą</button>
+            </div>
+          </div>
+
+          <div class="planet-card" id="neptune">
+            <div class="planet-header">NEPTŪNAS</div>
+            <div class="planet-description">Kelionė į tolimąjį Neptūną.</div>
+            <div class="planet-distance">250kg Au</div>
+            
+            <div class="planet-image-container">
+                <img src="wwwroot/img/NEPTUNE.jpg" alt="neptune" class="planet-image">
+              <div class="planet-name">Neptūnas</div>
+            </div>
+            
+            <div class="planet-status">Kelionė apmokėta</div>
+            
+            <div class="planet-actions">
             </div>
           </div>
         </div>
