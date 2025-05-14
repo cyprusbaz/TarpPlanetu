@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Planet specific buttons
   const payButton = document.querySelector("#neptune .planet-button");
   payButton.addEventListener("click", function () {
-    alert("Perkeliama į apmokėjimo puslapį: Kelionė į Neptūną");
+    window.location.href = "client_pay_for_trip.html";
   });
 
   const orderButton = document.querySelector(

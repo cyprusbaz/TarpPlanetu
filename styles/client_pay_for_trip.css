@@ -1,8 +1,8 @@
         :root {
-            --primary: #1a1a2e;
+            --primary: #000000;
             --secondary: #16213e;
             --accent: #0f3460;
-            --highlight: #e94560;
+            --highlight: #FFEA00;
             --text: #ffffff;
             --input-bg: rgba(255, 255, 255, 0.1);
             --success: #4caf50;
@@ -131,7 +131,7 @@
 
         .payBtn {
             background-color: var(--highlight);
-            color: var(--text);
+            color: var(--secondary);
         }
 
         .payBtn:hover {
