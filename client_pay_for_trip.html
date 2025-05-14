@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/client_pay_for_trip.css">
+    <title>Pay for the trip page</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white fw-bold" href="#">
+            TARPLANETŲ 
+            <a href="#">
+              <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
+            </a>
+          </a>
+      
+          <div class="d-flex align-items-center ms-auto">
+            <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+            <a href="#" class="text-white text-decoration-none me-3 fw-bold cursor: pointer;">Sukurti kelionės planą</a>
+            <a href="#" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
+            <a href="#">
+              <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+            </a>
+          </div>
+        </div>
+      </nav>
+
+
+
+       <div class="container">
+        <h1>Iš viso mokėti: 69420€</h1>
+        <div class="card">
+            <div class="form-group">
+                <h3>Vardas ir pavardė</h3>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Vardenis Pavardenis" id="name">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h3>Kortelės numeris</h3>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="xxxx xxxx xxxx xxxx" id="cardNumber" maxlength="19">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <h3>Galiojimo pabaiga</h3>
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="MM/YY" id="expiry" maxlength="5">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-column">
+                    <div class="form-group">
+                        <h3>CVC</h3>
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="xxx" id="cvc" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="btn-group">
+                <button class="payBtn" id="payButton">Apmokėti</button>
+                <button class="cancelBtn">Atšaukti</button>
+            </div>
+            
+            <div class="secure-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                Saugus mokėjimas
+            </div>
+        </div>
+    </div>
+    <script src="scirpts/client_pay_for_trip.js"></script>
+</body>
+</html>
