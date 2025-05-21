@@ -33,6 +33,21 @@
     </div>
   </nav>
 
+            <button class="hamburger" id="hamburger-button">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="#">Peržiūrėti darbuotojus</a></li>
+      <li><a href="#"><img src="assets/profile.png" alt="Profilis" class="profile-icon"></a></li>
+    </ul>
+  </nav>
+
   <!-- pagrindinis fonas -->
   <div class="full-bg py-5" style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover;">
     <div class="bg-overlay"></div>
@@ -285,6 +300,51 @@
       employeeToDelete = null;
     }
   });
+
+  const hamburger = document.getElementById("hamburger-button");
+const mobileNav = document.getElementById("mobile-nav");
+const overlay = document.getElementById("mobile-nav-overlay");
+const body = document.body;
+
+function openMobileNav() {
+  hamburger.classList.add("active");
+  mobileNav.classList.add("open");
+  overlay.classList.add("active");
+  body.classList.add("mobile-nav-open");
+}
+
+function closeMobileNav() {
+  hamburger.classList.remove("active");
+  mobileNav.classList.remove("open");
+  overlay.classList.remove("active");
+  body.classList.remove("mobile-nav-open");
+}
+
+hamburger.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (mobileNav.classList.contains("open")) {
+    closeMobileNav();
+  } else {
+    openMobileNav();
+  }
+});
+
+overlay.addEventListener("click", function () {
+  closeMobileNav();
+});
+
+const mobileNavLinks = mobileNav.querySelectorAll("a");
+mobileNavLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    closeMobileNav();
+  });
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && mobileNav.classList.contains("open")) {
+    closeMobileNav();
+  }
+});
 </script>
 
 </body>
