@@ -7,15 +7,15 @@ function createStars() {
     star.classList.add("star");
 
     const size = Math.random() * 2 + 1;
-    star.style.width = ${size}px;
-    star.style.height = ${size}px;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
 
-    star.style.left = ${Math.random() * 100}%;
-    star.style.top = ${Math.random() * 100}%;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
 
     const delay = Math.random() * 5;
     const duration = Math.random() * 3 + 2;
-    star.style.animation = twinkle ${duration}s ease-in-out ${delay}s infinite;
+    star.style.animation = `twinkle ${duration}s ease-in-out ${delay}s infinite`;
 
     container.appendChild(star);
   }
