@@ -26,6 +26,7 @@
       </a>
       <div class="d-flex align-items-center ms-auto">
         <a href="#" class="text-white text-decoration-none me-3 fw-bold">Darbuotojai</a>
+        <a href="#" class="text-white text-decoration-none me-3 fw-bold">Valdyti parametrus</a>
         <a href="#">
           <img src="assets/profile.png" alt="Profilis" class="profile-icon">
         </a>
@@ -34,12 +35,78 @@
   </nav>
 
   <!-- pagrindinis fonas -->
-  <div class="full-bg py-5" style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover;">
+<div class="full-bg py-5" style="background: url('assets/stars.jpg') no-repeat center center; background-size: cover;">    <div class="bg-overlay"></div>
     <div class="bg-overlay"></div>
     <div class="container position-relative">
       <div class="form-box p-4 mt-4">
         <div class="container my-4">
+         <!-- Mygtukas pridėti darbuotoją -->
+<div class="container my-4 d-flex justify-content-end">
+    <button data-bs-toggle="modal" data-bs-target="#addEmployeeModal" class="btn-add-employee">Pridėti darbuotoją</button>
+</div>
+
+<!-- Modalas -->
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-white rounded-3 p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="addEmployeeModalLabel">Pridėti darbuotoją</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Uždaryti"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addEmployeeForm">
+          <div class="d-flex align-items-center mb-3 gap-4">
+            <div>
+              <label for="employeePhoto" class="form-label">Nuotrauka</label>
+              <input class="form-control form-control-sm" type="file" id="employeePhoto" accept="image/*">
+            </div>
+            <div class="flex-grow-1">
+              <label for="employeeName" class="form-label">Vardas Pavardė</label>
+              <input type="text" class="form-control form-control-sm" id="employeeName" placeholder="Įveskite vardą ir pavardę" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="employeeRole" class="form-label">Pareigos</label>
+            <input type="text" class="form-control form-control-sm" id="employeeRole" placeholder="Įveskite pareigas" required>
+          </div>
+          <div class="mb-3">
+            <label for="employeeStartDate" class="form-label">Dirba nuo</label>
+            <input type="date" class="form-control form-control-sm" id="employeeStartDate" required>
+          </div>
+          <div class="mb-3">
+            <label for="employeePhone" class="form-label">Telefonas</label>
+            <input type="tel" class="form-control form-control-sm" id="employeePhone" placeholder="+370 ..." required>
+          </div>
+          <div class="mb-3">
+            <label for="employeeEmail" class="form-label">El. paštas</label>
+            <input type="email" class="form-control form-control-sm" id="employeeEmail" placeholder="email@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="employeeAddress" class="form-label">Adresas</label>
+            <input type="text" class="form-control form-control-sm" id="employeeAddress" placeholder="Įveskite adresą" required>
+          </div>
+          <div class="mb-3">
+            <label for="employeeDepartment" class="form-label">Departamentas</label>
+            <input type="text" class="form-control form-control-sm" id="employeeDepartment" placeholder="Įveskite departamentą" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" id="activateAccountBtn" class="btn btn-primary">Aktyvuoti paskyrą</button>
+        <!-- <button type="submit" form="addEmployeeForm" class="btn btn-primary">Aktyvuoti paskyrą</button> -->
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
           <!-- Įkeliami darbuotojai ir jų modalai -->
+<div id="employeesList" class="container my-4">
+  <!-- čia darbuotojų kortelės -->
+
+
 
 <div class="employee-card d-flex justify-content-between align-items-center px-4 py-3 mb-3">
   <div>
@@ -285,6 +352,62 @@
       employeeToDelete = null;
     }
   });
+
+
+  var myModal = new bootstrap.Modal(document.getElementById('addEmployeeModal'), {
+  backdrop: false,
+  keyboard: true
+});
+//myModal.show();
+
+</script>
+<script>
+  document.getElementById('activateAccountBtn').addEventListener('click', function () {
+    // Gauti įvestų duomenų reikšmes
+    const name = document.getElementById('employeeName').value.trim();
+    const role = document.getElementById('employeeRole').value.trim();
+
+    if (!name || !role) {
+      alert('Prašome įvesti bent vardą ir pareigas');
+      return;
+    }
+
+    // Sukurti naują darbuotojo kortelę HTML formatu
+    const newEmployeeCard = document.createElement('div');
+    newEmployeeCard.className = 'employee-card d-flex justify-content-between align-items-center px-4 py-3 mb-3';
+    newEmployeeCard.innerHTML = `
+      <div>
+        <h5 class="mb-1">${name}</h5>
+        <small class="employee-role">${role}</small>
+      </div>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm" disabled>Profilis</button>
+        <button class="btn btn-outline-danger btn-sm">Ištrinti</button>
+      </div>
+    `;
+
+    const list = document.getElementById('employeesList');
+    list.appendChild(newEmployeeCard);
+
+    document.getElementById('addEmployeeForm').reset();
+
+    const modalEl = document.getElementById('addEmployeeModal');
+    const modal = bootstrap.Modal.getInstance(modalEl);
+    modal.hide();
+
+    newEmployeeCard.querySelector('.btn-outline-danger').addEventListener('click', function () {
+      newEmployeeCard.remove();
+    });
+  });
+
+  document.querySelectorAll('.btn-outline-danger').forEach(button => {
+    button.addEventListener('click', function () {
+      this.closest('.employee-card').remove();
+    });
+  });
+
+  ///////////////////////////////////////////////////////////
+  
 </script>
 
 </body>
