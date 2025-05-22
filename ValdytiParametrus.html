@@ -25,8 +25,8 @@
         </a>
       </a>
       <div class="d-flex align-items-center ms-auto">
-        <a href="#" class="text-white text-decoration-none me-3 fw-bold">Darbuotojai</a>
-        <a href="#" class="text-white text-decoration-none me-3 fw-bold">Valdyti parametrus</a>
+          <a href="DarbuotojuSarasas.html" class="btn btn-primary me-3 fw-bold">Darbuotojai</a>
+          <a href="ValdytiParametrus.html" class="btn btn-primary me-3 fw-bold">Valdyti parametrus</a>
         <a href="#">
           <img src="assets/profile.png" alt="Profilis" class="profile-icon">
         </a>
@@ -189,6 +189,45 @@
               </div>
             </td>
           </tr>
+          <!-- ateiviukas -->
+          <tr class="pet-ateiviukas">
+          <td>Ateiviukas Džo</td>
+          <td>Marsas</td>
+          <td>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#petModalAteiviukas">Peržiūrėti</button>
+              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#petEditModalAteiviukas">Redaguoti</button>
+              <button class="btn btn-outline-danger btn-sm" data-pet-id="ateiviukas">Šalinti</button>
+            </div>
+          </td>
+        </tr>
+      
+        <!-- lapiukai -->
+        <tr class="pet-lapiukas">
+          <td>Lapiukas Šuolis</td>
+          <td>Žemė</td>
+          <td>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#petModalLapiukas">Peržiūrėti</button>
+              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#petEditModalLapiukas">Redaguoti</button>
+              <button class="btn btn-outline-danger btn-sm" data-pet-id="lapiukas">Šalinti</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="pet-lapiukas2">
+          <td>Lapiukas Kukis</td>
+          <td>Žemė</td>
+          <td>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#petModalLapiukas2">Peržiūrėti</button>
+              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#petEditModalLapiukas2">Redaguoti</button>
+              <button class="btn btn-outline-danger btn-sm" data-pet-id="lapiukas2">Šalinti</button>
+            </div>
+          </td>
+        </tr>
+
+
           </tbody>
         </table>
       </div>
@@ -221,6 +260,352 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
+  <!-- AUGINTINIAI -->
+      <div class="modal fade" id="petModalAteiviukas" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content custom-modal p-4">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Ateiviukas</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body d-flex flex-column flex-md-row">
+            <div class="me-md-4 text-center">
+              <img src="assets/pets/ateiviukas.png" class="rounded-circle img-fluid" style="width: 150px;">
+            </div>
+            <div>
+              <p><strong>Planeta:</strong> Marsas</p>
+              <p><strong>Rūšis:</strong> Ateivis</p>
+              <p><strong>Amžius:</strong> 1000 metų</p>
+              <p><strong>Mėgstamas maistas:</strong> Energijos laukai</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="petEditModalAteiviukas" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti - Ateiviukas</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <label for="petImageEditAteiviukas">
+              <img src="assets/pets/ateiviukas.png" id="previewPetImageEditAteiviukas" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+            </label>
+            <input type="file" id="petImageEditAteiviukas" accept="image/*" style="display: none;" onchange="previewPetEditImage('previewPetImageEditAteiviukas', event)">
+          </div>
+          <div class="flex-grow-1">
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Vardas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Ateiviukas">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Planeta:</label>
+              <select class="form-select flex-grow-1">
+                <option>Merkurijus</option>
+                <option>Venera</option>
+                <option selected>Marsas</option>
+                <option>Žemė</option>
+                <option>Jupiteris</option>
+                <option>Saturnas</option>
+                <option>Uranas</option>
+                <option>Neptūnas</option>
+              </select>
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Rūšis:</label>
+              <input type="text" class="form-control flex-grow-1" value="Ateivis">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Amžius:</label>
+              <input type="text" class="form-control flex-grow-1" value="1000 metų">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Mėgstamas maistas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Energijos laukai">
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Ateiviukas Peržiūros Modalas -->
+<div class="modal fade" id="petModalAteiviukas" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Ateiviukas</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-flex flex-column flex-md-row">
+        <div class="me-md-4 text-center">
+          <img src="assets/pets/ateiviukas.png" class="rounded-circle img-fluid" style="width: 150px;">
+        </div>
+        <div>
+          <p><strong>Planeta:</strong> Marsas</p>
+          <p><strong>Rūšis:</strong> Ateivis</p>
+          <p><strong>Amžius:</strong> 1000 metų</p>
+          <p><strong>Mėgstamas maistas:</strong> Energijos laukai</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ateiviukas Redagavimo Modalas -->
+<div class="modal fade" id="petEditModalAteiviukas" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti - Ateiviukas</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <label for="petImageEditAteiviukas">
+              <img src="assets/ateiviukas.png" id="previewPetImageEditAteiviukas" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+            </label>
+            <input type="file" id="petImageEditAteiviukas" accept="image/*" style="display: none;" onchange="previewPetEditImage('previewPetImageEditAteiviukas', event)">
+          </div>
+          <div class="flex-grow-1">
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Vardas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Ateiviukas">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Planeta:</label>
+              <select class="form-select flex-grow-1">
+                <option>Merkurijus</option>
+                <option>Venera</option>
+                <option selected>Marsas</option>
+                <option>Žemė</option>
+                <option>Jupiteris</option>
+                <option>Saturnas</option>
+                <option>Uranas</option>
+                <option>Neptūnas</option>
+              </select>
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Rūšis:</label>
+              <input type="text" class="form-control flex-grow-1" value="Ateivis">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Amžius:</label>
+              <input type="text" class="form-control flex-grow-1" value="1000 metų">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Mėgstamas maistas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Energijos laukai">
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Lapiukas Peržiūros Modalas -->
+<div class="modal fade" id="petModalLapiukas" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Lapiukas</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-flex flex-column flex-md-row">
+        <div class="me-md-4 text-center">
+          <img src="assets/pets/lapiukas.png" class="rounded-circle img-fluid" style="width: 150px;">
+        </div>
+        <div>
+          <p><strong>Planeta:</strong> Žemė</p>
+          <p><strong>Rūšis:</strong> Lapė</p>
+          <p><strong>Amžius:</strong> 4 metai</p>
+          <p><strong>Mėgstamas maistas:</strong> Uogos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lapiukas Redagavimo Modalas -->
+<div class="modal fade" id="petEditModalLapiukas" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti - Lapiukas</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <label for="petImageEditLapiukas">
+              <img src="assets/pets/lapiukas2.png" id="previewPetImageEditLapiukas" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+            </label>
+            <input type="file" id="petImageEditLapiukas" accept="image/*" style="display: none;" onchange="previewPetEditImage('previewPetImageEditLapiukas', event)">
+          </div>
+          <div class="flex-grow-1">
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Vardas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Lapiukas">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Planeta:</label>
+              <select class="form-select flex-grow-1">
+                <option>Merkurijus</option>
+                <option>Venera</option>
+                <option>Marsas</option>
+                <option selected>Žemė</option>
+                <option>Jupiteris</option>
+                <option>Saturnas</option>
+                <option>Uranas</option>
+                <option>Neptūnas</option>
+              </select>
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Rūšis:</label>
+              <input type="text" class="form-control flex-grow-1" value="Lapė">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Amžius:</label>
+              <input type="text" class="form-control flex-grow-1" value="4 metai">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Mėgstamas maistas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Uogos">
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Lapiukas2 Peržiūros Modalas -->
+<div class="modal fade" id="petModalLapiukas2" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Lapiukas2</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-flex flex-column flex-md-row">
+        <div class="me-md-4 text-center">
+          <img src="assets/pets/lapiukas2.png" class="rounded-circle img-fluid" style="width: 150px;">
+        </div>
+        <div>
+          <p><strong>Planeta:</strong> Žemė</p>
+          <p><strong>Rūšis:</strong> Lapė</p>
+          <p><strong>Amžius:</strong> 2 metai</p>
+          <p><strong>Mėgstamas maistas:</strong> Mėsa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lapiukas2 Redagavimo Modalas -->
+<div class="modal fade" id="petEditModalLapiukas2" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti - Lapiukas2</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body d-flex flex-column flex-md-row">
+          <div class="me-md-4 text-center">
+            <label for="petImageEditLapiukas2">
+              <img src="assets/pets/lapiukas2.png" id="previewPetImageEditLapiukas2" class="rounded-circle img-fluid" style="width: 150px; height: auto; cursor: pointer;">
+            </label>
+            <input type="file" id="petImageEditLapiukas2" accept="image/*" style="display: none;" onchange="previewPetEditImage('previewPetImageEditLapiukas2', event)">
+          </div>
+          <div class="flex-grow-1">
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Vardas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Lapiukas2">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Planeta:</label>
+              <select class="form-select flex-grow-1">
+                <option>Merkurijus</option>
+                <option>Venera</option>
+                <option>Marsas</option>
+                <option selected>Žemė</option>
+                <option>Jupiteris</option>
+                <option>Saturnas</option>
+                <option>Uranas</option>
+                <option>Neptūnas</option>
+              </select>
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Rūšis:</label>
+              <input type="text" class="form-control flex-grow-1" value="Lapė">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Amžius:</label>
+              <input type="text" class="form-control flex-grow-1" value="2 metai">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+              <label class="form-label mb-0" style="width: 150px;">Mėgstamas maistas:</label>
+              <input type="text" class="form-control flex-grow-1" value="Mėsa">
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- PLANETU MODALAI -->
   <div class="modal fade" id="planetModalMarsas" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content custom-modal p-4">
@@ -1042,6 +1427,20 @@
 
 
 <script>
+
+  // Registruoti šalinimo mygtukus (jei dar nėra)
+function registerDeletePetButtons() {
+  document.querySelectorAll('.btn-outline-danger[data-pet-id]').forEach(button => {
+    button.onclick = function () {
+      petToDelete = this.getAttribute('data-pet-id');
+    };
+  });
+}
+// Iškviesk šią funkciją po puslapio užkrovimo ir po naujų augintinių pridėjimo
+registerDeletePetButtons();
+
+
+
 document.getElementById('activityAddForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
@@ -1247,6 +1646,7 @@ function removeActivity(row) {
 }
 
 // Dinamiškai priskiriame redagavimo ir šalinimo mygtukus jau esančioms ir naujai pridėtoms eilutėms:
+// Dinamiškai priskiriame redagavimo ir šalinimo mygtukus jau esančioms ir naujai pridėtoms eilutėms:
 function attachActivityRowListeners(row) {
   const editBtn = row.querySelector('.btn-outline-primary');
   const deleteBtn = row.querySelector('.btn-outline-danger');
@@ -1261,6 +1661,10 @@ function attachActivityRowListeners(row) {
     }
   });
 }
+
+// Priskirkime redagavimo ir šalinimo mygtukų eventus jau egzistuojančioms eilutėms
+document.querySelectorAll('#activityTableBody tr').forEach(attachActivityRowListeners);
+
 
 // Pridėjimo formos veikla (tavo jau turima logika su papildymu):
 document.getElementById('activityAddForm').addEventListener('submit', function(e) {
