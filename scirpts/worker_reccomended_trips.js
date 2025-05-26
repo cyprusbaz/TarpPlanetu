@@ -38,6 +38,9 @@ function submitForm(event) {
   const planet = document.getElementById("planet").value;
   const price = document.getElementById("price").value;
   const description = document.getElementById("description").value;
+  const selected = document.querySelector('input[name="veiklos"]:checked');
+  const duration = document.getElementById("description").value;
+  const seats = document.getElementById("seats").value;
 
   const tripList = document.querySelector(".trip-list");
   const newCard = document.createElement("div");
@@ -46,6 +49,9 @@ function submitForm(event) {
         <h3>${title}</h3>
         <p>Planeta: ${planet}</p>
         <p>Kaina: ${price} €</p>
+        <p>Veikla: ${selected.value}</p>
+        <p>Trukmė: ${duration}</p>
+        <p>Vietų skaičius: ${seats}</p>
         <p>Aprašymas: ${description}</p>
       `;
 
