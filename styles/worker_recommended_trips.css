@@ -59,6 +59,28 @@
       color: var(--yellow);
     }
 
+    .veiklos-grupe {
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  gap: 1rem;
+  border: none;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.veiklos-grupe legend {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.veikla {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: left;
+}
+
     /* Modal stilius */
     .modal {
       display: none;

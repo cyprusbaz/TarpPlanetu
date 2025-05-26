@@ -63,11 +63,45 @@
   <option value="Mėnulis">Mėnulis</option>
 </select>
         <input type="number" id="price" placeholder="Kaina (€)" required />
+              <input type="number" min="1" placeholder="Trukmė (dienomis)" id="duration" required />
+      <input type="number" min="1" placeholder="Vietų skaičius" id="seats" required />
         <textarea id="description" placeholder="Trumpas aprašymas" required></textarea>
+<fieldset class="veiklos-grupe">
+  <legend>Pasirinkite veiklą:</legend>
+
+  <div class="veikla">
+    <input type="radio" id="zygis" name="veiklos" value="Žygis po kalnus" required>
+    <label for="zygis">Žygis po kalnus</label>
+  </div>
+
+  <div class="veikla">
+    <input type="radio" id="sportas" name="veiklos" value="Sporto treniruotė su ateiviais">
+    <label for="sportas">Sporto treniruotė su ateiviais</label>
+  </div>
+
+  <div class="veikla">
+    <input type="radio" id="protiniai" name="veiklos" value="Iškasenų laboratorija">
+    <label for="protiniai">Iškasenų laboratorija</label>
+  </div>
+</fieldset>
         <button type="submit">Sukurti</button>
       </form>
     </div>
   </div>
+   <footer>
+        <div class="bg-black text-white py-5">
+            <div class="container">
+            <h5 class="fw-bold mb-3" style="font-size: 20px;">REIKIA PAGALBOS KURIANT KELIONĘ?</h5>
+            <p class="mb-2">
+                Susisiekite su mumis:
+                <a href="mailto:pagalba@tarpplanetu.lt" class="text-info text-decoration-none">pagalba@tarpplanetu.lt</a>
+            </p>
+            <p class="mb-0">
+                Mūsų komanda pasiruošusi padėti jums suplanuoti nepriekaištingą skrydį!
+            </p>
+            </div>
+        </div> 
+    </footer>
   <script src="scirpts/worker_reccomended_trips.js"></script>
 </body>
 </html>
