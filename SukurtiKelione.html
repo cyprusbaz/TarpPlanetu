@@ -12,9 +12,9 @@
 <!-- navigation banneris -->
 <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
   <div class="container-fluid">
-    <a class="navbar-brand text-white fw-bold" href="#">
+    <a class="navbar-brand text-white fw-bold" href="client_home_page.html">
       TARPLANETŲ 
-      <a href="#">
+      <a href="client_home_page.html">
         <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
       </a>
     </a>
@@ -22,13 +22,29 @@
     <div class="d-flex align-items-center ms-auto">
       <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
       <a href="#" class="text-white text-decoration-none me-3 fw-bold cursor: pointer;">Sukurti kelionės planą</a>
-      <a href="#" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
+      <a href="client_my_trips.html" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
       <a href="#">
         <img src="assets/profile.png" alt="Profilis" class="profile-icon">
       </a>
     </div>
   </div>
 </nav>
+
+            <button class="hamburger" id="hamburger-button">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="SukurtiKelione.html">Sukurti kelionės planą</a></li>
+      <li><a href="client_my_trips.html">Mano kelionės</a></li>
+      <li><a href="#"><img src="assets/profile.png" alt="Profilis" class="profile-icon"></a></li>
+    </ul>
+  </nav>
 
 <div class="full-bg py-5" style="background: url('assets/stars.jpg') no-repeat center center; background-size: cover;">
   
@@ -284,6 +300,7 @@ function showHotelsForPlanet(planet) {
 }
 
 </script>
-
+<script src="scirpts/client_profile_button_toggle.js"></script>
+<script src="scirpts/mobile_nav.js"></script>
 </body>
 </html>

@@ -11,6 +11,10 @@ body {
     margin: 0;
 
 }
+.navbar a{
+    color: white;
+    border-radius: 5px;
+}
 
 .container {
     width: 100%;
