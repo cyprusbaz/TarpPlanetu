@@ -47,35 +47,35 @@
 
     <div class="d-flex justify-content-between flex-wrap mb-4"> <!-- flex-wrap perkels i kita eilute, ar tikrai good ideja?-->
       <div class="text-center">
-        <img src="assets/mars.png" alt="Marsas" class="planet-img" /> <!-- class ateina jau is css kodo, kur aprasyta planet -->
-        <div>Marsas</div>
-      </div>
+      <img src="assets/mars.png" alt="Marsas" class="planet-img selectable-planet" data-planet="Marsas" />
+      <div>Marsas</div>
+    </div>
       <div class="text-center">
-        <img src="assets/mercury.png" alt="Merkurijus" class="planet-img" /> <!-- alt reikalingas jei paveiksliukas neuzsikrauna-->
+        <img src="assets/mercury.png" alt="Merkurijus" class="planet-img selectable-planet" data-planet="Merkurijus" /> <!-- alt reikalingas jei paveiksliukas neuzsikrauna-->
         <div>Merkurijus</div>
       </div>
       <div class="text-center">
-        <img src="assets/moon.png" alt="Mėnulis" class="planet-img" />
+        <img src="assets/moon.png" alt="Mėnulis" class="planet-img selectable-planet" data-planet="Mėnulis" />
         <div>Mėnulis</div>
       </div>
       <div class="text-center">
-        <img src="assets/VENERA.png" alt="Venera" class="planet-img" />
+        <img src="assets/VENERA.png" alt="Venera" class="planet-img selectable-planet" data-planet="Venera" />
         <div>Venera</div>
       </div>
       <div class="text-center">
-        <img src="assets/JUPITER.png" alt="Jupiteris" class="planet-img" />
+        <img src="assets/JUPITER.png" alt="Jupiteris" class="planet-img selectable-planet" data-planet="Jupiteris" />
         <div>Jupiteris</div>
       </div>
       <div class="text-center">
-        <img src="assets/saturn.jpg" alt="Saturnas" class="planet-img" />
+        <img src="assets/saturn.jpg" alt="Saturnas" class="planet-img selectable-planet" data-planet="Saturnas" />
         <div>Saturnas</div>
       </div>
       <div class="text-center">
-        <img src="assets/URANUS.png" alt="Uranas" class="planet-img" />
+        <img src="assets/URANUS.png" alt="Uranas" class="planet-img selectable-planet" data-planet="Uranas" />
         <div>Uranas</div>
       </div>
       <div class="text-center">
-        <img src="assets/NEPTUNE.jpg" alt="Neptūnas" class="planet-img" />
+        <img src="assets/NEPTUNE.jpg" alt="Neptūnas" class="planet-img selectable-planet" data-planet="Neptūnas" />
         <div>Neptūnas</div>
       </div>
     </div>
@@ -100,7 +100,7 @@
 
     <div class="mb-4">
       <label class="form-label fw-bold text-white">VIEŠBUTIS</label>
-      <div class="d-flex justify-content-between flex-wrap">
+      <div id="hotelsGallery" class="hotel-card-wide w-100 mb-3">
         <img src="assets/hotels/ekonomiskas.png" alt="Viešbutis ekonominis" class="hotel-img">
         <img src="assets/hotels/modernus.png" alt="Viešbutis modernus" class="hotel-img">
       </div>
@@ -174,3 +174,116 @@
   </div>
 </div>
 
+<script>
+
+  // ... visa tavo planetHotels logika ir event listeneriai kaip buvo anksčiau
+
+// Funkcija parodyti viešbučius pagal planetą
+function showHotelsForPlanet(planet) {
+  const hotels = planetHotels[planet] || [];
+  let html = '';
+  hotels.forEach(hotel => {
+    html += `
+      <div class="hotel-card-wide w-100">
+        <img src="${hotel.img}" alt="${hotel.title}" class="hotel-img" style="width: 150px; border-radius: 16px;">
+        <div style="margin-top: 0.3em;">${hotel.title}</div>
+      </div>
+    `;
+  });
+  document.getElementById('hotelsGallery').innerHTML = html || "<div class='text-center w-100'>Viešbučių nerasta šioje planetoje.</div>";
+}
+
+// --- PLANETOS PASIRINKIMAS (klasėms selectable-planet) ---
+document.querySelectorAll('.selectable-planet').forEach(planetImg => {
+  planetImg.style.cursor = "pointer";
+  planetImg.addEventListener('click', function() {
+    const planet = this.getAttribute('data-planet');
+    showHotelsForPlanet(planet);
+
+    // pažymėti pasirinktą vizualiai
+    document.querySelectorAll('.selectable-planet').forEach(p => p.classList.remove('planet-selected'));
+    this.classList.add('planet-selected');
+  });
+});
+
+// --- AUTOMATINIS MARSO PASIRINKIMAS ---
+window.addEventListener('DOMContentLoaded', function() {
+  showHotelsForPlanet('Marsas'); // iškart parodo Marso viešbučius
+
+  // pažymi Marsą kaip pasirinktą
+  document.querySelectorAll('.selectable-planet').forEach(img => {
+    if(img.getAttribute('data-planet') === 'Marsas') {
+      img.classList.add('planet-selected');
+    } else {
+      img.classList.remove('planet-selected');
+    }
+  });
+});
+
+  // Viešbučių paveikslėlių sąrašas pagal planetą:
+const planetHotels = {
+  "Marsas": [
+    { img: "assets/hotels/mars-bendras.png", title: "Mars Resort" },
+    { img: "assets/hotels/mars2.png", title: "Mars Dome" }
+  ],
+  "Merkurijus": [
+    { img: "assets/hotels/mercury-bendras.png", title: "Mercury Sunrise" },
+    { img: "assets/hotels/mercury2.png", title: "Solar View Hotel" }
+  ],
+  "Mėnulis": [
+    { img: "assets/hotels/moon-bendras.png", title: "Lunar Base" },
+    { img: "assets/hotels/moon2.png", title: "Moon Capsule" }
+  ],
+  "Venera": [
+    { img: "assets/hotels/venera-bendras.png", title: "Venera Palace" },
+    { img: "assets/hotels/venera2.png", title: "Venus Dream" }
+  ],
+  "Jupiteris": [
+    { img: "assets/hotels/jupyter-bendras.png", title: "Jupiter Orbital" },
+    { img: "assets/hotels/jupyter2.png", title: "Storm View" }
+  ],
+  "Saturnas": [
+    { img: "assets/hotels/saturn-bendras.png", title: "Saturn Ring Inn" },
+    { img: "assets/hotels/saturn2.png", title: "Titan Resort" }
+  ],
+  "Uranas": [
+    { img: "assets/hotels/uranus-bendras.png", title: "Uranus Ice Hotel" },
+    { img: "assets/hotels/uranus2.png", title: "Sky Retreat" }
+  ],
+  "Neptūnas": [
+    { img: "assets/hotels/neptune-bendras.png", title: "Neptune Blue Palace" },
+    { img: "assets/hotels/neptune2.png", title: "Deep Sea Hotel" }
+  ]
+};
+
+// Pasirink planetą:
+document.querySelectorAll('.selectable-planet').forEach(planetImg => {
+  planetImg.style.cursor = "pointer";
+  planetImg.addEventListener('click', function() {
+    const planet = this.getAttribute('data-planet');
+    showHotelsForPlanet(planet);
+
+    // Pažymėk pasirinktą vizualiai (nebūtina, bet patogu UX)
+    document.querySelectorAll('.selectable-planet').forEach(p => p.classList.remove('planet-selected'));
+    this.classList.add('planet-selected');
+  });
+});
+
+function showHotelsForPlanet(planet) {
+  const hotels = planetHotels[planet] || [];
+  let html = '';
+  hotels.forEach(hotel => {
+    html += `
+      <div class="text-center m-2">
+        <img src="${hotel.img}" alt="${hotel.title}" class="hotel-img" style="width: 150px; border-radius: 16px;">
+        <div style="margin-top: 0.3em;">${hotel.title}</div>
+      </div>
+    `;
+  });
+  document.getElementById('hotelsGallery').innerHTML = html || "<div class='text-center w-100'>Viešbučių nerasta šioje planetoje.</div>";
+}
+
+</script>
+
+</body>
+</html>
