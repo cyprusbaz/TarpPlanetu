@@ -145,8 +145,10 @@
               <td>500 €</td>
               <td>Mėnulis</td>
               <td>
-                <button class="btn btn-outline-primary btn-sm me-2">Redaguoti</button>
-                <button class="btn btn-outline-danger btn-sm">Šalinti</button>
+                <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#activityEditModal">Redaguoti</button>
+                <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#activityDeleteModal">Šalinti</button>
+<!-- 
+                <button class="btn btn-outline-danger btn-sm">Šalinti</button> -->
               </td>
             </tr>
             <tr>
@@ -154,8 +156,8 @@
               <td>1200 €</td>
               <td>Saturnas</td>
               <td>
-                <button class="btn btn-outline-primary btn-sm me-2">Redaguoti</button>
-                <button class="btn btn-outline-danger btn-sm">Šalinti</button>
+                <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#activityEditModal">Redaguoti</button>
+                <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#activityDeleteModal">Šalinti</button>
               </td>
             </tr>
             <!-- Pridėsi daugiau veiklų -->
@@ -235,10 +237,144 @@
       <div class="mb-5">
         <button class="btn btn-success fw-bold" data-bs-toggle="modal" data-bs-target="#petAddModal">Pridėti augintinį</button>
       </div>
+      
+      <h4 class="fw-bold mb-3 mt-5">Viešbučiai</h4>
+<div class="table-responsive mb-3" style="max-height: 250px; overflow-y: auto;">
+  <table class="table table-dark table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Pavadinimas</th>
+        <th>Planeta</th>
+        <th>Klasė</th>
+        <th>Kaina (€/naktis)</th>
+        <th>Veiksmai</th>
+      </tr>
+    </thead>
+    <!-- <tbody id="hotelsTableBody">
+      <tr class="hotel-mars-resort">
+        <td>Mars Resort</td>
+        <td>Marsas</td>
+        <td>Liukso</td>
+        <td>1500</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModalMarsResort">Peržiūrėti</button>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelEditModalMarsResort">Redaguoti</button>
+            <button class="btn btn-outline-danger btn-sm" data-hotel-id="mars-resort" data-bs-toggle="modal" data-bs-target="#deleteHotelModal">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <!-- Gali pridėti daugiau viešbučių... -->
+    <!-- </tbody> --> 
+    <tbody id="hotelsTableBody">
+  <tr class="hotel-mars-resort">
+    <td>Mars Resort</td>
+    <td>Marsas</td>
+    <td>Liukso</td>
+    <td>1500</td>
+    <td>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModalMarsResort">Peržiūrėti</button>
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelEditModalMarsResort" data-hotel-row="hotel-mars-resort">Redaguoti</button>        
+        <button class="btn btn-outline-danger btn-sm" data-hotel-id="mars-resort" data-bs-toggle="modal" data-bs-target="#deleteHotelModal">Šalinti</button>
+      </div>
+    </td>
+  </tr>
+  <tr class="hotel-neptune-blue-palace">
+    <td>Neptune Blue Palace</td>
+    <td>Neptūnas</td>
+    <td>Ekonominė</td>
+    <td>800</td>
+    <td>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModalNeptuneBluePalace">Peržiūrėti</button>
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelEditModalNeptuneBluePalace" data-hotel-row="hotel-neptune-blue-palace">Redaguoti</button>
+        <button class="btn btn-outline-danger btn-sm" data-hotel-id="neptune-blue-palace" data-bs-toggle="modal" data-bs-target="#deleteHotelModal">Šalinti</button>
+      </div>
+    </td>
+  </tr>
+  <tr class="hotel-saturn-ring-inn">
+    <td>Saturn Ring Inn</td>
+    <td>Saturnas</td>
+    <td>Standartinė</td>
+    <td>1200</td>
+    <td>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModalSaturnRingInn">Peržiūrėti</button>
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelEditModalSaturnRingInn" data-hotel-row="hotel-saturn-ring-inn">Redaguoti</button>
+        <button class="btn btn-outline-danger btn-sm" data-hotel-id="saturn-ring-inn" data-bs-toggle="modal" data-bs-target="#deleteHotelModal">Šalinti</button>
+      </div>
+    </td>
+  </tr>
+  <tr class="hotel-mercury-sunrise-hotel">
+    <td>Mercury Sunrise Hotel</td>
+    <td>Merkurijus</td>
+    <td>Ekonominė</td>
+    <td>600</td>
+    <td>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModalMercurySunriseHotel">Peržiūrėti</button>
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelEditModalMercurySunriseHotel" data-hotel-row="hotel-mercury-sunrise-hotel">Redaguoti</button>
+        <button class="btn btn-outline-danger btn-sm" data-hotel-id="mercury-sunrise-hotel" data-bs-toggle="modal" data-bs-target="#deleteHotelModal">Šalinti</button>
+      </div>
+    </td>
+  </tr>
+  
+</tbody>
+
+  </table>
+</div>
+<div class="mb-5">
+  <button class="btn btn-success fw-bold" data-bs-toggle="modal" data-bs-target="#hotelAddModal">Pridėti viešbutį</button>
+</div>
+
+
+<h4 class="fw-bold mb-3 mt-5">Erdvėlaiviai</h4>
+<div class="table-responsive mb-3" style="max-height: 250px; overflow-y: auto;">
+  <table class="table table-dark table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Pavadinimas</th>
+        <th>Modelis</th>
+        <th>Vietų skaičius</th>
+        <th>Veiksmai</th>
+      </tr>
+    </thead>
+    <tbody id="spaceshipsTableBody">
+      <tr class="spaceship-galaxy-one">
+        <td>Galaxy One</td>
+        <td>XG-500</td>
+        <td>6</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#spaceshipModalGalaxyOne">Peržiūrėti</button>
+            <button class="btn btn-outline-danger btn-sm" data-spaceship-id="galaxy-one" data-bs-toggle="modal" data-bs-target="#deleteSpaceshipModal">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <tr class="spaceship-stellar-cruiser">
+        <td>Stellar Cruiser</td>
+        <td>SC-240</td>
+        <td>12</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#spaceshipModalStellarCruiser">Peržiūrėti</button>
+            <button class="btn btn-outline-danger btn-sm" data-spaceship-id="stellar-cruiser" data-bs-toggle="modal" data-bs-target="#deleteSpaceshipModal">Šalinti</button>
+          </div>
+        </td>
+      </tr>
+      <!-- ... pridėk daugiau erdvėlaivių -->
+    </tbody>
+  </table>
+</div>
+<div class="mb-5">
+  <button class="btn btn-success fw-bold" data-bs-toggle="modal" data-bs-target="#spaceshipAddModal">Pridėti erdvėlaivį</button>
+</div>
 
     </div>
   </div>
 </div>
+
 
 
 <!-- -->
@@ -259,6 +395,842 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- erdvelaiviai -->
+
+  <div class="modal fade" id="spaceshipModalGalaxyOne" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Galaxy One</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-row justify-content-center align-items-center mb-3" style="gap: 32px;">
+          <img src="assets/spaceships/raketa11.png" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit:cover;">
+          <img src="assets/spaceships/raketa12.png" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit:cover;">
+        </div>
+        <div class="text-center">
+          <p><strong>Modelis:</strong> XG-500</p>
+          <p><strong>Vietų skaičius:</strong> 6</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="spaceshipAddModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Pridėti erdvėlaivį</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form id="spaceshipAddForm">
+        <div class="modal-body d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+          <div class="d-flex flex-row align-items-center" style="gap: 16px;">
+            <div class="text-center">
+              <label for="spaceshipImage1Add" style="cursor:pointer;">
+                <img src="assets/placeholder.png" id="previewSpaceshipImage1Add" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                <div style="font-size: 0.9em;">1 nuotrauka</div>
+              </label>
+              <input type="file" id="spaceshipImage1Add" accept="image/*" style="display:none;" onchange="previewSpaceshipImage('previewSpaceshipImage1Add', event)">
+            </div>
+            <div class="text-center">
+              <label for="spaceshipImage2Add" style="cursor:pointer;">
+                <img src="assets/placeholder.png" id="previewSpaceshipImage2Add" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                <div style="font-size: 0.9em;">2 nuotrauka</div>
+              </label>
+              <input type="file" id="spaceshipImage2Add" accept="image/*" style="display:none;" onchange="previewSpaceshipImage('previewSpaceshipImage2Add', event)">
+            </div>
+          </div>
+          <div class="ms-3" style="min-width: 200px; text-align: left;">
+            <div class="mb-3">
+              <label class="form-label">Pavadinimas:</label>
+              <input type="text" class="form-control" id="spaceshipNameAdd" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Modelis:</label>
+              <input type="text" class="form-control" id="spaceshipModelAdd" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Vietų skaičius:</label>
+              <input type="number" min="1" class="form-control" id="spaceshipSeatsAdd" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="submit" class="btn btn-success">Pridėti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="spaceshipModalStellarCruiser" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Stellar Cruiser</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-row justify-content-center align-items-center mb-3" style="gap: 32px;">
+          <img src="assets/spaceships/raketa21.png" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit:cover;">
+          <img src="assets/spaceships/raketa22.png" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit:cover;">
+        </div>
+        <div class="text-center">
+          <p><strong>Modelis:</strong> SC-240</p>
+          <p><strong>Vietų skaičius:</strong> 12</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="deleteSpaceshipModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Patvirtinimas</h5>
+      </div>
+      <div class="modal-body">
+        Ar tikrai norite pašalinti šį erdvėlaivį?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteSpaceship">Taip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+function previewSpaceshipImage(previewId, event) {
+  const reader = new FileReader();
+  reader.onload = () => document.getElementById(previewId).src = reader.result;
+  if (event.target.files && event.target.files[0]) {
+    reader.readAsDataURL(event.target.files[0]);
+  }
+}
+
+
+let spaceshipToDelete = null;
+document.querySelectorAll('button[data-spaceship-id]').forEach(btn => {
+  btn.addEventListener('click', function() {
+    spaceshipToDelete = btn.getAttribute('data-spaceship-id');
+  });
+});
+
+// document.getElementById('confirmDeleteSpaceship').addEventListener('click', function() {
+//   if (spaceshipToDelete) {
+//     const row = document.querySelector('.spaceship-' + spaceshipToDelete);
+//     if (row) row.remove();
+//     const modal = bootstrap.Modal.getInstance(document.getElementById('deleteSpaceshipModal'));
+//     modal.hide();
+//     spaceshipToDelete = null;
+//   }
+// });
+document.getElementById('spaceshipAddForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Surenkame duomenis iš formos laukų
+  const name = document.getElementById('spaceshipNameAdd').value.trim();
+  const model = document.getElementById('spaceshipModelAdd').value.trim();
+  const seats = document.getElementById('spaceshipSeatsAdd').value.trim();
+  const description = document.getElementById('spaceshipDescriptionAdd').value.trim();
+
+  // Nuotraukos (preview jau yra img src kaip base64)
+  const image1src = document.getElementById('previewSpaceshipImage1Add').src;
+  const image2src = document.getElementById('previewSpaceshipImage2Add').src;
+
+  // Patikrinimas, kad būtini laukai užpildyti
+  if (!name || !model || !seats || image1src.includes("placeholder") || image2src.includes("placeholder")) {
+    alert("Užpildykite visus laukus ir pasirinkite abi nuotraukas!");
+    return;
+  }
+
+  // Sugeneruojam klasę unikaliai
+  const rowClass = "spaceship-" + name.toLowerCase().replace(/\s+/g, '-');
+
+  // Sukuriame naują eilutę
+  const newRow = document.createElement('tr');
+  newRow.classList.add(rowClass);
+
+  // Lentelėje rodom tik pavadinimą/modelį/vietų skaičių, bet peržiūros modalas bus atskirai
+  newRow.innerHTML = `
+    <td>${name}</td>
+    <td>${model}</td>
+    <td>${seats}</td>
+    <td>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#spaceshipModal${rowClass.replace('spaceship-','').replace(/-/g,'')}" id="previewBtn-${rowClass}">Peržiūrėti</button>
+        <button class="btn btn-outline-danger btn-sm" data-spaceship-id="${rowClass.replace('spaceship-','')}" data-bs-toggle="modal" data-bs-target="#deleteSpaceshipModal">Šalinti</button>
+      </div>
+    </td>
+  `;
+
+  // Pridedame naują eilutę į lentelę
+  document.getElementById('spaceshipsTableBody').appendChild(newRow);
+
+  // Taip pat sukuriame peržiūros modalą dinamiškai (jei reikia, galima daryti append prie body)
+  const modalId = `spaceshipModal${rowClass.replace('spaceship-','').replace(/-/g,'')}`;
+  const modalHtml = `
+    <div class="modal fade" id="${modalId}" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content custom-modal p-4">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">${name}</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-row justify-content-center align-items-center mb-3" style="gap: 32px;">
+              <img src="${image1src}" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit:cover;">
+              <img src="${image2src}" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit:cover;">
+            </div>
+            <div class="text-center">
+              <p><strong>Modelis:</strong> ${model}</p>
+              <p><strong>Vietų skaičius:</strong> ${seats}</p>
+              <p><strong>Aprašymas:</strong> ${description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  // Pridedame modalą į <body>
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+  // Priskiriame šalinimo funkciją naujam mygtukui
+  newRow.querySelector('.btn-outline-danger').addEventListener('click', function() {
+    spaceshipToDelete = rowClass.replace('spaceship-','');
+  });
+
+  // Uždaryti modalą
+  const addModal = bootstrap.Modal.getInstance(document.getElementById('spaceshipAddModal'));
+  addModal.hide();
+
+  // Išvalyti formą
+  document.getElementById('spaceshipAddForm').reset();
+  document.getElementById('previewSpaceshipImage1Add').src = "assets/placeholder.png";
+  document.getElementById('previewSpaceshipImage2Add').src = "assets/placeholder.png";
+});
+
+
+</script>
+
+
+     <!-- VIEŠBUČIAI MODALAI -->
+  <div class="modal fade" id="hotelAddModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Pridėti viešbutį</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form id="hotelAddForm">
+        <div class="modal-body d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+          <!-- Kairėje: dvi nuotraukos -->
+          <div class="d-flex flex-row align-items-center" style="gap: 16px;">
+            <div class="text-center">
+              <label for="hotelImage1Add" style="cursor:pointer;">
+                <img src="assets/placeholder.png" id="previewHotelImage1Add" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                <div style="font-size: 0.9em;">1 nuotrauka</div>
+              </label>
+              <input type="file" id="hotelImage1Add" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage1Add', event)">
+            </div>
+            <div class="text-center">
+              <label for="hotelImage2Add" style="cursor:pointer;">
+                <img src="assets/placeholder.png" id="previewHotelImage2Add" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                <div style="font-size: 0.9em;">2 nuotrauka</div>
+              </label>
+              <input type="file" id="hotelImage2Add" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage2Add', event)">
+            </div>
+          </div>
+          <!-- Dešinėje: viešbučio duomenys -->
+          <div class="ms-3" style="min-width: 200px; text-align: left;">
+            <div class="mb-3">
+              <label class="form-label">Pavadinimas:</label>
+              <input type="text" class="form-control" id="hotelNameAdd" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Planeta:</label>
+              <select class="form-select" id="hotelPlanetAdd" required>
+                <option value="" disabled selected>Pasirinkite planetą</option>
+                <option>Merkurijus</option>
+                <option>Venera</option>
+                <option>Marsas</option>
+                <option>Žemė</option>
+                <option>Jupiteris</option>
+                <option>Saturnas</option>
+                <option>Uranas</option>
+                <option>Neptūnas</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Klasė:</label>
+              <select class="form-select" id="hotelClassAdd" required>
+                <option value="" disabled selected>Pasirinkite klasę</option>
+                <option>Ekonominė</option>
+                <option>Standartinė</option>
+                <option>Liukso</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Kaina (€ / naktis):</label>
+              <input type="number" min="0" class="form-control" id="hotelPriceAdd" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="submit" class="btn btn-success">Pridėti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="hotelModalMarsResort" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Mars Resort</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+          <!-- Pirmas stulpelis: 1-a nuotrauka -->
+          <div>
+            <img src="assets/hotels/mars.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <!-- Antras stulpelis: 2-a nuotrauka -->
+          <div>
+            <img src="assets/hotels/mars2.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <!-- Trečias stulpelis: tekstas -->
+          <div class="ms-2" style="min-width: 180px; text-align: left;">
+            <p><strong>Planeta:</strong> Marsas</p>
+            <p><strong>Klasė:</strong> Liukso</p>
+            <p><strong>Kaina:</strong> 1500 €/naktis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="hotelModalMercurySunriseHotel" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Mercury Sunrise Hotel</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+          <!-- Pirmas stulpelis: 1-a nuotrauka -->
+          <div>
+            <img src="assets/hotels/mercury.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <!-- Antras stulpelis: 2-a nuotrauka -->
+          <div>
+            <img src="assets/hotels/mercury2.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <!-- Trečias stulpelis: tekstas -->
+          <div class="ms-2" style="min-width: 180px; text-align: left;">
+            <p><strong>Planeta:</strong> Merkurijus</p>
+            <p><strong>Klasė:</strong> Ekonominė</p>
+            <p><strong>Kaina:</strong> 600 €/naktis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="hotelModalNeptuneBluePalace" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Neptune Blue Palace</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+          <div>
+            <img src="assets/hotels/neptune.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <div>
+            <img src="assets/hotels/neptune2.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <div class="ms-2" style="min-width: 180px; text-align: left;">
+            <p><strong>Planeta:</strong> Neptūnas</p>
+            <p><strong>Klasė:</strong> Ekonominė</p>
+            <p><strong>Kaina:</strong> 800 €/naktis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="hotelModalSaturnRingInn" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Saturn Ring Inn</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+          <!-- Pirmas stulpelis: 1-a nuotrauka -->
+          <div>
+            <img src="assets/hotels/saturn.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <!-- Antras stulpelis: 2-a nuotrauka -->
+          <div>
+            <img src="assets/hotels/saturn2.png" class="img-fluid rounded" style="width: 130px; height: 130px; object-fit: cover;">
+          </div>
+          <!-- Trečias stulpelis: tekstas -->
+          <div class="ms-2" style="min-width: 180px; text-align: left;">
+            <p><strong>Planeta:</strong> Saturnas</p>
+            <p><strong>Klasė:</strong> Standartinė</p>
+            <p><strong>Kaina:</strong> 1200 €/naktis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="hotelEditModalMarsResort" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti – Mars Resort</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+            <!-- Kairė: dvi nuotraukos su galimybe pasirinkti -->
+            <div class="d-flex flex-row align-items-center" style="gap: 16px;">
+              <div class="text-center">
+                <label for="editHotelImage1MarsResort" style="cursor:pointer;">
+                  <img src="assets/hotels/mars.png" id="previewHotelImage1MarsResort" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage1MarsResort" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage1MarsResort', event)">
+              </div>
+              <div class="text-center">
+                <label for="editHotelImage2MarsResort" style="cursor:pointer;">
+                  <img src="assets/hotels/mars2.png" id="previewHotelImage2MarsResort" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage2MarsResort" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage2MarsResort', event)">
+              </div>
+            </div>
+            <!-- Dešinė: viešbučio duomenys -->
+            <div class="ms-3" style="min-width: 200px; text-align: left;">
+              <div class="mb-3">
+                <label class="form-label">Pavadinimas:</label>
+                <input type="text" class="form-control" value="Mars Resort">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Planeta:</label>
+                <select class="form-select">
+                  <option>Merkurijus</option>
+                  <option>Venera</option>
+                  <option selected>Marsas</option>
+                  <option>Žemė</option>
+                  <option>Jupiteris</option>
+                  <option>Saturnas</option>
+                  <option>Uranas</option>
+                  <option>Neptūnas</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Klasė:</label>
+                <select class="form-select">
+                  <option>Ekonominė</option>
+                  <option>Standartinė</option>
+                  <option selected>Liukso</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Kaina (€ / naktis):</label>
+                <input type="number" class="form-control" value="1500">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="hotelEditModalNeptuneBluePalace" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti – Neptune Blue Palace</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+            <!-- Kairėje dvi nuotraukos su galimybe pasirinkti -->
+            <div class="d-flex flex-row align-items-center" style="gap: 16px;">
+              <div class="text-center">
+                <label for="editHotelImage1Neptune" style="cursor:pointer;">
+                  <img src="assets/hotels/neptune.png" id="previewHotelImage1Neptune" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage1Neptune" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage1Neptune', event)">
+              </div>
+              <div class="text-center">
+                <label for="editHotelImage2Neptune" style="cursor:pointer;">
+                  <img src="assets/hotels/neptune2.png" id="previewHotelImage2Neptune" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage2Neptune" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage2Neptune', event)">
+              </div>
+            </div>
+            <!-- Dešinėje: redaguojami laukai -->
+            <div class="ms-3" style="min-width: 200px; text-align: left;">
+              <div class="mb-3">
+                <label class="form-label">Pavadinimas:</label>
+                <input type="text" class="form-control" value="Neptune Blue Palace">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Planeta:</label>
+                <select class="form-select">
+                  <option>Merkurijus</option>
+                  <option>Venera</option>
+                  <option>Marsas</option>
+                  <option>Žemė</option>
+                  <option>Jupiteris</option>
+                  <option>Saturnas</option>
+                  <option>Uranas</option>
+                  <option selected>Neptūnas</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Klasė:</label>
+                <select class="form-select">
+                  <option selected>Ekonominė</option>
+                  <option>Standartinė</option>
+                  <option>Liukso</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Kaina (€ / naktis):</label>
+                <input type="number" class="form-control" value="800">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="hotelEditModalSaturnRingInn" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti – Saturn Ring Inn</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+            <!-- Kairėje dvi nuotraukos su galimybe pakeisti -->
+            <div class="d-flex flex-row align-items-center" style="gap: 16px;">
+              <div class="text-center">
+                <label for="editHotelImage1Saturn" style="cursor:pointer;">
+                  <img src="assets/hotels/saturn.png" id="previewHotelImage1Saturn" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage1Saturn" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage1Saturn', event)">
+              </div>
+              <div class="text-center">
+                <label for="editHotelImage2Saturn" style="cursor:pointer;">
+                  <img src="assets/hotels/saturn2.png" id="previewHotelImage2Saturn" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage2Saturn" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage2Saturn', event)">
+              </div>
+            </div>
+            <!-- Dešinėje redaguojami laukai -->
+            <div class="ms-3" style="min-width: 200px; text-align: left;">
+              <div class="mb-3">
+                <label class="form-label">Pavadinimas:</label>
+                <input type="text" class="form-control" value="Saturn Ring Inn">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Planeta:</label>
+                <select class="form-select">
+                  <option>Merkurijus</option>
+                  <option>Venera</option>
+                  <option>Marsas</option>
+                  <option>Žemė</option>
+                  <option>Jupiteris</option>
+                  <option selected>Saturnas</option>
+                  <option>Uranas</option>
+                  <option>Neptūnas</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Klasė:</label>
+                <select class="form-select">
+                  <option>Ekonominė</option>
+                  <option selected>Standartinė</option>
+                  <option>Liukso</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Kaina (€ / naktis):</label>
+                <input type="number" class="form-control" value="1200">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="hotelEditModalMercurySunriseHotel" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content custom-modal p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Redaguoti – Mercury Sunrise Hotel</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="d-flex flex-row align-items-center justify-content-center" style="gap: 36px;">
+            <!-- Kairėje dvi nuotraukos su galimybe pakeisti -->
+            <div class="d-flex flex-row align-items-center" style="gap: 16px;">
+              <div class="text-center">
+                <label for="editHotelImage1Mercury" style="cursor:pointer;">
+                  <img src="assets/hotels/mercury.png" id="previewHotelImage1Mercury" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage1Mercury" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage1Mercury', event)">
+              </div>
+              <div class="text-center">
+                <label for="editHotelImage2Mercury" style="cursor:pointer;">
+                  <img src="assets/hotels/mercury2.png" id="previewHotelImage2Mercury" class="img-fluid rounded mb-2" style="width: 110px; height: 110px; object-fit:cover;">
+                  <div style="font-size: 0.9em;">Pakeisti</div>
+                </label>
+                <input type="file" id="editHotelImage2Mercury" accept="image/*" style="display:none;" onchange="previewHotelImage('previewHotelImage2Mercury', event)">
+              </div>
+            </div>
+            <!-- Dešinėje redaguojami laukai -->
+            <div class="ms-3" style="min-width: 200px; text-align: left;">
+              <div class="mb-3">
+                <label class="form-label">Pavadinimas:</label>
+                <input type="text" class="form-control" value="Mercury Sunrise Hotel">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Planeta:</label>
+                <select class="form-select">
+                  <option selected>Merkurijus</option>
+                  <option>Venera</option>
+                  <option>Marsas</option>
+                  <option>Žemė</option>
+                  <option>Jupiteris</option>
+                  <option>Saturnas</option>
+                  <option>Uranas</option>
+                  <option>Neptūnas</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Klasė:</label>
+                <select class="form-select">
+                  <option selected>Ekonominė</option>
+                  <option>Standartinė</option>
+                  <option>Liukso</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Kaina (€ / naktis):</label>
+                <input type="number" class="form-control" value="600">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="submit" class="btn btn-success">Išsaugoti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+      <div class="modal fade" id="deleteHotelModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Patvirtinimas</h5>
+      </div>
+      <div class="modal-body">
+        Ar tikrai norite pašalinti šį viešbutį?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteHotel">Taip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+let hotelToDelete = null;
+
+// Pridėti viešbutį
+document.getElementById('hotelAddForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('hotelName').value.trim();
+  const planet = document.getElementById('hotelPlanet').value;
+  const hotelClass = document.getElementById('hotelClass').value;
+  const price = document.getElementById('hotelPrice').value.trim();
+
+  if (!name || !planet || !hotelClass || !price) {
+    alert("Užpildykite visus laukus!");
+    return;
+  }
+
+  const newRow = document.createElement('tr');
+  const hotelId = name.toLowerCase().replace(/\s+/g, '-');
+  newRow.classList.add(`hotel-${hotelId}`);
+
+  newRow.innerHTML = `
+    <td>${name}</td>
+    <td>${planet}</td>
+    <td>${hotelClass}</td>
+    <td>${price}</td>
+    <td>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm">Peržiūrėti</button>
+        <button class="btn btn-outline-primary btn-sm">Redaguoti</button>
+        <button class="btn btn-outline-danger btn-sm" data-hotel-id="${hotelId}" data-bs-toggle="modal" data-bs-target="#deleteHotelModal">Šalinti</button>
+      </div>
+    </td>
+  `;
+
+  document.getElementById('hotelsTableBody').appendChild(newRow);
+
+  // Modalas užsidaro
+  const modal = bootstrap.Modal.getInstance(document.getElementById('hotelAddModal'));
+  modal.hide();
+
+  document.getElementById('hotelAddForm').reset();
+
+  // Priskiriam šalinimo funkciją
+  newRow.querySelector('.btn-outline-danger').addEventListener('click', function() {
+    hotelToDelete = this.getAttribute('data-hotel-id');
+  });
+});
+
+// Šalinimo mygtuko logika
+document.querySelectorAll('.btn-outline-danger[data-hotel-id]').forEach(button => {
+  button.addEventListener('click', function() {
+    hotelToDelete = this.getAttribute('data-hotel-id');
+  });
+});
+
+document.getElementById('confirmDeleteHotel').addEventListener('click', function() {
+  if (hotelToDelete) {
+    document.querySelector(`.hotel-${hotelToDelete}`).remove();
+    const modal = bootstrap.Modal.getInstance(document.getElementById('deleteHotelModal'));
+    modal.hide();
+    hotelToDelete = null;
+  }
+});
+
+
+function previewHotelImage(previewId, event) {
+  const reader = new FileReader();
+  reader.onload = () => document.getElementById(previewId).src = reader.result;
+  reader.readAsDataURL(event.target.files[0]);
+}
+
+// Pagauna visų redagavimo modalų submit įvykius
+document.querySelectorAll('div[id^="hotelEditModal"]').forEach(modal => {
+  const form = modal.querySelector('form');
+  if (!form) return;
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Surandam lentelės klasę (pagal paskutinį kartą atidarytą mygtuką)
+    const currentModalId = modal.id;
+    // Surandam aktyvų redagavimo mygtuką, kuris iškvietė modalą
+    // (veikia su bootstrap modal shown įvykiu)
+    const hotelRowClass = modal.getAttribute('data-row-class');
+    if (!hotelRowClass) return;
+
+    // Paimam reikšmes iš laukų
+    const name   = form.querySelector('input[type="text"]').value;
+    const planet = form.querySelectorAll('select.form-select')[0].value;
+    const klase  = form.querySelectorAll('select.form-select')[1].value;
+    const price  = form.querySelector('input[type="number"]').value;
+
+    // Surandam lentelės eilutę
+    const row = document.querySelector('.' + hotelRowClass);
+    const cells = row.querySelectorAll('td');
+    cells[0].textContent = name;
+    cells[1].textContent = planet;
+    cells[2].textContent = klase;
+    cells[3].textContent = price;
+
+    // Uždaro modalą
+    const bsModal = bootstrap.Modal.getInstance(modal);
+    bsModal.hide();
+  });
+});
+
+// Priskiriame kuri eilutė turi būti redaguojama, kai spaudžiamas „Redaguoti“
+document.querySelectorAll('button[data-bs-toggle="modal"][data-bs-target^="#hotelEditModal"]').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const modalId = btn.getAttribute('data-bs-target').replace('#', '');
+    const rowClass = btn.getAttribute('data-hotel-row');
+    // Išsaugom row klasę pačiame modale
+    document.getElementById(modalId).setAttribute('data-row-class', rowClass);
+  });
+});
+
+
+</script>
 
   <!-- AUGINTINIAI -->
       <div class="modal fade" id="petModalAteiviukas" tabindex="-1">
@@ -628,6 +1600,23 @@
     </div>
   </div>
   
+    <div class="modal fade" id="activityDeleteModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Patvirtinimas</h5>
+        </div>
+        <div class="modal-body">
+          Ar tikrai norite pašalinti šią veiklą?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteActivity">Taip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="modal fade" id="planetEditModalMarsas" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -696,6 +1685,48 @@
     }
     </script>
     
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Laikys, kuri eilutė yra redaguojama
+  let activityBeingEdited = null;
+
+  // Visoms veiklų redagavimo mygtukams priskiriam event'ą
+  document.querySelectorAll('#activityTableBody .btn-outline-primary').forEach(btn => {
+    btn.addEventListener('click', function() {
+      activityBeingEdited = btn.closest('tr');
+      const cells = activityBeingEdited.querySelectorAll('td');
+      document.getElementById('editActivityName').value   = cells[0].textContent.trim();
+      document.getElementById('editActivityPrice').value  = cells[1].textContent.replace(' €','').trim();
+      document.getElementById('editActivityPlanet').value = cells[2].textContent.trim();
+      // Modalas atsidarys automatiškai per Bootstrap, nes yra data-bs-toggle/data-bs-target
+    });
+  });
+
+  // Kai išsaugome redagavimą
+  document.getElementById('activityEditForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!activityBeingEdited) return;
+
+    const newName   = document.getElementById('editActivityName').value.trim();
+    const newPrice  = document.getElementById('editActivityPrice').value.trim();
+    const newPlanet = document.getElementById('editActivityPlanet').value;
+
+    if (!newName || !newPrice || !newPlanet) {
+      alert('Užpildykite visus laukus!');
+      return;
+    }
+
+    const cells = activityBeingEdited.querySelectorAll('td');
+    cells[0].textContent = newName;
+    cells[1].textContent = `${newPrice} €`;
+    cells[2].textContent = newPlanet;
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('activityEditModal'));
+    modal.hide();
+    activityBeingEdited = null;
+  });
+});
+</script>
 
     <!-- Patvirtinimo modalas -->
     <!-- Patvirtinimo modalas be X mygtuko -->
@@ -718,6 +1749,7 @@
   
       
 
+  
   <script>
     let planetToDelete = null;
   
@@ -744,6 +1776,8 @@
         planetToDelete = null;
       }
     });
+
+    
   </script>
   
 
@@ -1427,6 +2461,7 @@
 
 
 <script>
+  let activityToDelete = null;
 
   // Registruoti šalinimo mygtukus (jei dar nėra)
 function registerDeletePetButtons() {
@@ -1463,7 +2498,7 @@ document.getElementById('activityAddForm').addEventListener('submit', function(e
     <td>${price} €</td>
     <td>${planet}</td>
     <td>
-      <button class="btn btn-outline-primary btn-sm me-2" disabled>Redaguoti</button>
+      <button class="btn btn-outline-primary btn-sm me-2" >Redaguoti</button>
       <button class="btn btn-outline-danger btn-sm" data-activity-id="${activityId}">Šalinti</button>
     </td>
   `;
@@ -1580,6 +2615,7 @@ document.getElementById('activityAddForm').addEventListener('submit', function(e
 
 
 <script>
+
     // Paveikslėlio peržiūra
     function previewAddImage(event) {
       const input = event.target;
@@ -1630,6 +2666,9 @@ const activityTableBody = document.getElementById('activityTableBody');
 const activityEditModal = new bootstrap.Modal(document.getElementById('activityEditModal'));
 let activityBeingEdited = null; // Laikysime kuri eilutė redaguojama
 
+
+
+
 // Funkcija įjungti redagavimo modalą su esamais duomenimis
 function openEditModal(row) {
   activityBeingEdited = row;
@@ -1648,22 +2687,66 @@ function removeActivity(row) {
 // Dinamiškai priskiriame redagavimo ir šalinimo mygtukus jau esančioms ir naujai pridėtoms eilutėms:
 // Dinamiškai priskiriame redagavimo ir šalinimo mygtukus jau esančioms ir naujai pridėtoms eilutėms:
 function attachActivityRowListeners(row) {
+  
   const editBtn = row.querySelector('.btn-outline-primary');
   const deleteBtn = row.querySelector('.btn-outline-danger');
 
-  editBtn.disabled = false; // Įjungiame redagavimo mygtuką
+  // Svarbu! Nuimti visus senus eventus, kad nesikauptų
+  editBtn.onclick = null;
+  deleteBtn.onclick = null;
 
+  // Redaguoti
   editBtn.addEventListener('click', () => openEditModal(row));
 
+  
+  document.querySelectorAll('.btn-outline-danger').forEach(button => {
+    button.addEventListener('click', function () {
+      activityToDelete = this.getAttribute('data-activity-id');
+    });
+  });
+  // Šalinti
   deleteBtn.addEventListener('click', () => {
-    if (confirm('Ar tikrai norite pašalinti šią veiklą?')) {
-      removeActivity(row);
-    }
+    activityToDelete = row;
+    const deleteModal = new bootstrap.Modal(document.getElementById('activityDeleteModal'));
+    deleteModal.show();
   });
 }
 
+document.getElementById('confirmDeleteActivity').addEventListener('click', function () {
+   if (activityToDelete) {
+      document.querySelector(`.activity-${activityToDelete}`).remove();
+      const modal = bootstrap.Modal.getInstance(document.getElementById('deleteAcvtivityModal'));
+      modal.hide();
+      activityToDelete = null;
+    }
+
+});
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('#activityTableBody tr').forEach(attachActivityRowListeners);
+});
+
+
 // Priskirkime redagavimo ir šalinimo mygtukų eventus jau egzistuojančioms eilutėms
 document.querySelectorAll('#activityTableBody tr').forEach(attachActivityRowListeners);
+
+// // Užregistruojame visus Šalinti mygtukus:
+// document.querySelectorAll('#activityTableBody .btn-outline-danger').forEach(btn => {
+//     btn.addEventListener('click', function () {
+//         // Randa TR eilutę
+//         rowToDelete = this.closest('tr');
+//     });
+// });
+
+// Paspaudus "Taip" modale, ištrina pasirinkta eilutę:
+// document.getElementById('confirmDeleteActivity').addEventListener('click', function () {
+//     if (rowToDelete) {
+//         rowToDelete.remove();
+//         rowToDelete = null;
+//     }
+//     // Uždaryti modalą
+//     const modal = bootstrap.Modal.getInstance(document.getElementById('activityDeleteModal'));
+//     modal.hide();
+// });
 
 
 // Pridėjimo formos veikla (tavo jau turima logika su papildymu):
@@ -1732,7 +2815,16 @@ document.getElementById('activityEditForm').addEventListener('submit', function(
 // Priskirkime redagavimo ir šalinimo mygtukų eventus jau egzistuojančioms eilutėms
 document.querySelectorAll('#activityTableBody tr').forEach(attachActivityRowListeners);
 
+
+
+
+// 3) Puslapio užkrovimo metu priskiriam visoms esamoms eilutėms
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('#activityTableBody tr').forEach(attachActivityRowListeners);
+});
+
   </script>
-  
+
+
 </body>
 </html> 
