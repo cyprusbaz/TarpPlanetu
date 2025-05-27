@@ -27,6 +27,23 @@
           </div>
         </div>
       </nav>
+
+                <button class="hamburger" id="hamburger-button">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="#">Sukurti kelionės planą</a></li>
+      <li><a href="#">Mano kelionės</a></li>
+      <li><a href="#"></a><img src="assets/profile.png" alt="Profilis" class="profile-icon"></a></li>
+    </ul>
+  </nav>
+  
     <div class="container">
         <div class="header">
           <div class="solar-system">
@@ -81,8 +98,7 @@
             <div class="planet-status">Kelionė jau užsakyta.</div>
             
             <div class="planet-actions">
-              <button class="planet-button">Apmokėti kelionę</button>
-              <button class="planet-button cancel_trip">Atšaukti kelionę</button>
+              <button class="planet-button pay-trip">Apmokėti kelionę</button>
             </div>
           </div>
           
@@ -116,9 +132,9 @@
             <div class="planet-status">Neužsakyta</div>
             
             <div class="planet-actions">
-              <button class="planet-button">Užsakyti kelionę</button>
-              <a href="SukurtiKelione.html"><button class="planet-button">Koreguoti kelionės planą</button></a>
-              <button class="planet-button outline">Pašalinti kelionės planą</button>
+              <button class="planet-button order-trip">Užsakyti kelionę</button>
+              <a href="SukurtiKelione.html"><button class="planet-button edit-plan">Koreguoti kelionės planą</button></a>
+              <button class="planet-button outline remove-trip">Pašalinti kelionės planą</button>
             </div>
           </div>
 

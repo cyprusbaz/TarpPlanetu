@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/worker_recommended_trips.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+            <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+                <div class="container-fluid">
+                  <a  class="navbar-brand text-white fw-bold" href="#">
+                    TARPLANETŲ 
+                    <a href="#">
+                      <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
+                    </a>
+                  </a>
+              
+                  <div class="d-flex align-items-center ms-auto">
+                    <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+                    <a href="http://127.0.0.1:5500/worker_booked_trips.html#" class="text-white fw-bold text-decoration-none me-3 cursor: pointer;">Užsakytos kelionės</a>
+                    <a href="#">
+                      <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+                    </a>
+                  </div>
+                </div>
+              </nav>
+          </header>
+          
+  <div class="container">
+    <div class="header-actions">
+      <h2>Kelionių sąrašas</h2>
+      <button class="create-btn" onclick="openModal()">+ Sukurti siūlomą kelionę</button>
+    </div>
+
+    <div class="trip-list">
+      <div class="trip-card">
+        <h3>Kelionė į Marsą</h3>
+        <p>Planeta: Marsas</p>
+        <p>Kaina: 5000 €</p>
+        <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="tripModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Nauja kelionė</h2>
+      <form id="tripForm" onsubmit="submitForm(event)">
+        <input type="text" id="title" placeholder="Kelionės pavadinimas" required />
+        <label for="planet">Pasirinkite planetą:</label>
+        <select id="planet" name="planet">
+  <option value="Marsas">Marsas</option>
+  <option value="Venera">Venera</option>
+  <option value="Jupiteris">Jupiteris</option>
+  <option value="Saturnas">Saturnas</option>
+  <option value="Merkurijus">Merkurijus</option>
+  <option value="Uranas">Uranas</option>
+  <option value="Neptūnas">Neptūnas</option>
+  <option value="Mėnulis">Mėnulis</option>
+</select>
+        <input type="number" id="price" placeholder="Kaina (€)" required />
+        <textarea id="description" placeholder="Trumpas aprašymas" required></textarea>
+        <button type="submit">Sukurti</button>
+      </form>
+    </div>
+  </div>
+  <script src="scirpts/worker_reccomended_trips.js"></script>
+</body>
+</html>
+cdn.jsdelivr.net

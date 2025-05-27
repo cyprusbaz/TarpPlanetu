@@ -27,46 +27,75 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   createStars();
-  const cancelButton = document.querySelector(".cancel_trip");
 
-  // Add event listeners to buttons
-  const planButton = document.querySelector(
-    ".action-buttons .action-button:first-child"
-  );
-  const listButton = document.querySelector(
-    ".action-buttons .action-button:last-child"
-  );
+  document.querySelectorAll("button").forEach(function (button) {
+    const buttonText = button.textContent.toLowerCase();
+    const buttonClass = button.className;
+    // Pay trip buttons
+    if (buttonClass.includes("pay-trip") || buttonText.includes("apmokėti")) {
+      button.addEventListener("click", function () {
+        window.location.href = "client_pay_for_trip.html";
+      });
+    }
 
-  // Planet specific buttons
-  const payButton = document.querySelector("#neptune .planet-button");
-  payButton.addEventListener("click", function () {
-    alert("Perkeliama į apmokėjimo puslapį: Kelionė į Neptūną");
-  });
+    // Cancel trip buttons
+    if (
+      buttonClass.includes("cancel_trip") ||
+      buttonText.includes("atšaukti")
+    ) {
+      button.addEventListener("click", function () {
+        const planetCard = this.closest(".planet-card");
+        const planetName = planetCard.querySelector(".planet-name").textContent;
 
-  const orderButton = document.querySelector(
-    "#jupiter .planet-button:first-child"
-  );
-  orderButton.addEventListener("click", function () {
-    alert("Kelionė į Jupiterį užsakyta!");
-    this.textContent = "Kelionė užsakyta";
-    this.disabled = true;
-  });
+        if (confirm(`Ar tikrai norite atšaukti kelionę į ${planetName}?`)) {
+          planetCard.querySelector(".planet-status").textContent =
+            "Kelionė atšaukta";
+          this.style.display = "none";
+        }
+      });
+    }
 
-  const removeButton = document.querySelector(
-    "#jupiter .planet-button.outline"
-  );
-  removeButton.addEventListener("click", function () {
-    if (confirm("Ar tikrai norite pašalinti kelionę į Jupiterį iš plano?")) {
-      document.querySelector("#jupiter").style.opacity = 0.5;
-      setTimeout(() => {
-        document.querySelector("#jupiter").style.display = "none";
-      }, 1000);
+    // Order trip buttons
+    if (buttonClass.includes("order-trip") || buttonText.includes("užsakyti")) {
+      button.addEventListener("click", function () {
+        var edit = document.querySelector(".edit-plan");
+        edit.display = "none";
+
+        this.textContent = "Kelionė užsakyta";
+        this.disabled = true;
+        const planetCard = this.closest(".planet-card");
+        if (planetCard && planetCard.querySelector(".planet-status")) {
+          planetCard.querySelector(".planet-status").textContent =
+            "Laukiama patvirtinimo";
+        }
+      });
+    }
+
+    // Remove trip buttons
+    if (
+      buttonClass.includes("remove-trip") ||
+      buttonText.includes("pašalinti")
+    ) {
+      button.addEventListener("click", function () {
+        const planetCard = this.closest(".planet-card");
+        const planetName = planetCard.querySelector(".planet-name").textContent;
+
+        if (
+          confirm(
+            `Ar tikrai norite pašalinti kelionę į ${planetName} iš plano?`
+          )
+        ) {
+          planetCard.style.opacity = 0.5;
+          setTimeout(() => {
+            planetCard.style.display = "none";
+          }, 1000);
+        }
+      });
     }
   });
 
   // Make planets slightly rotate on hover
-  const planets = document.querySelectorAll(".planet-image");
-  planets.forEach((planet) => {
+  document.querySelectorAll(".planet-image").forEach((planet) => {
     planet.addEventListener("mouseover", function () {
       this.style.transition = "transform 2s ease-in-out";
       this.style.transform = "rotate(20deg)";
@@ -76,4 +105,49 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.transform = "rotate(0deg)";
     });
   });
+});
+
+const hamburger = document.getElementById("hamburger-button");
+const mobileNav = document.getElementById("mobile-nav");
+const overlay = document.getElementById("mobile-nav-overlay");
+const body = document.body;
+
+function openMobileNav() {
+  hamburger.classList.add("active");
+  mobileNav.classList.add("open");
+  overlay.classList.add("active");
+  body.classList.add("mobile-nav-open");
+}
+
+function closeMobileNav() {
+  hamburger.classList.remove("active");
+  mobileNav.classList.remove("open");
+  overlay.classList.remove("active");
+  body.classList.remove("mobile-nav-open");
+}
+
+hamburger.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (mobileNav.classList.contains("open")) {
+    closeMobileNav();
+  } else {
+    openMobileNav();
+  }
+});
+
+overlay.addEventListener("click", function () {
+  closeMobileNav();
+});
+
+const mobileNavLinks = mobileNav.querySelectorAll("a");
+mobileNavLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    closeMobileNav();
+  });
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && mobileNav.classList.contains("open")) {
+    closeMobileNav();
+  }
 });
