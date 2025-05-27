@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/edit_profile.css">
+    <link rel="stylesheet" href="styles/stars.css">
+</head>
+<body>
+           <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white fw-bold" href="client_home_page.html">
+      TARPLANETŲ 
+      <a href="#">
+        <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
+      </a>
+    </a>
+
+    <div class="d-flex align-items-center ms-auto">
+      <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+      <a href="SukurtiKelione.html" class="text-white text-decoration-none me-3 fw-bold cursor: pointer;">Sukurti kelionės planą</a>
+      <a href="client_my_trips.html" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
+      <a href="#">
+        <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+      </a>
+    </div>
+  </div>
+</nav><div class="container">
+        <h1>Redaguoti profilio informaciją</h1>
+        <div class="divider"></div>
+
+        <div class="profile-section">
+            <div class="profile-pic-container">
+                <div class="profile-pic">
+                    <div class="profile-iconn"></div>
+                </div>
+            </div>
+
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="name">Vardas</label>
+                    <input type="text" id="name" class="form-control" value="Vardas">
+                </div>
+                <div class="form-group">
+                    <label for="surname">Pavardė</label>
+                    <input type="text" id="surname" class="form-control" value="Pavarde">
+                </div>
+                <div class="form-group">
+                    <label for="email">Elektroninis paštas</label>
+                    <input type="email" id="email" class="form-control" value="varpav@gmail.com">
+                </div>
+                <div class="divider"></div>
+                <div class="form-group">
+                    <label for="gender">Lytis</label>
+                    <select id="gender" class="form-control">
+                        <option value="male">Vyras</option>
+                        <option value="female" selected>Moteris</option>
+                        <option value="other">Kita</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Gimimo data</label>
+                    <span class="date-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </span>
+                    <input type="date" id="dob" class="form-control" placeholder="MMMM-YY-MM" value="MMMM-YY-MM">
+                </div>
+                <div class="form-group">
+                    <label for="weight">Svoris</label>
+                    <input type="text" id="weight" class="form-control" value="145 kg">
+                </div>
+                <div class="form-group">
+                    <label for="height">Ūgis</label>
+                    <input type="text" id="height" class="form-control" value="175 cm">
+                </div>
+                <button type="button" id="saveProfileBtn" class="btn btn-primary">Išsaugoti pakeitimus</button>
+            </form>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="password-section">
+            <h2>Keist slaptažodį</h2>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="oldPassword">Senas Slaptažodis</label>
+                    <input type="password" id="oldPassword" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Naujas slaptažodis</label>
+                    <input type="password" id="newPassword" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="repeatPassword">Pakartoti slaptažodį</label>
+                    <input type="password" id="repeatPassword" class="form-control">
+                </div>
+                <button type="button" id="changePasswordBtn" class="btn btn-primary">Change Password</button>
+            </form>
+        </div>
+    </div>
+    <script src="scirpts/client_profile_button_toggle.js"></script>
+    <script src="scirpts/starts_effect.js"></script>
+</body>
+</html>
