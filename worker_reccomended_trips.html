@@ -8,26 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-            <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
-                <div class="container-fluid">
-                  <a  class="navbar-brand text-white fw-bold" href="#">
-                    TARPLANETŲ 
-                    <a href="#">
-                      <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
-                    </a>
-                  </a>
-              
-                  <div class="d-flex align-items-center ms-auto">
-                    <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
-                    <a href="http://127.0.0.1:5500/worker_booked_trips.html#" class="text-white fw-bold text-decoration-none me-3 cursor: pointer;">Užsakytos kelionės</a>
-                    <a href="#">
-                      <img src="assets/profile.png" alt="Profilis" class="profile-icon">
-                    </a>
-                  </div>
-                </div>
-              </nav>
-          </header>
+        <header>
+        <nav class="navbar navbar-expand-lg px-4 py-2" style="background-color: #0A0F47;">
+            <div class="container-fluid">
+              <a  class="navbar-brand text-white fw-bold" href="worker_home_page.html">
+                TARPLANETŲ 
+                <a href="#">
+                  <img src="assets/rocket.png" alt="Raketa" class="rocket-icon">
+                </a>
+              </a>
+          
+              <div class="d-flex align-items-center ms-auto">
+                <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
+                <a href="worker_booked_trips.html" class="text-white fw-bold text-decoration-none me-3 cursor: pointer;">Užsakytos kelionės</a>
+                <a href="worker_reccomended_trips.html" class="text-white text-decoration-none me-3 cursor: pointer;">Visos siūlomos kelionės</a>
+                <a href="#">
+                  <img src="assets/profile.png" alt="Profilis" class="profile-icon">
+                </a>
+              </div>
+            </div>
+          </nav>
+      </header>
           
   <div class="container">
     <div class="header-actions">
@@ -44,6 +45,7 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
+                        <button class="deleteBtn">Ištrinti siūloma kelionę</button>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -53,6 +55,7 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
+                                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -62,6 +65,7 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
+                                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -71,6 +75,7 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
+                                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -80,6 +85,7 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
+                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
       </div>
     </div>
     
@@ -143,5 +149,6 @@
         </div> 
     </footer>
   <script src="scirpts/worker_reccomended_trips.js"></script>
+      <script src="scirpts/worker_profile_button_toggle.js"></script>
 </body>
 </html>

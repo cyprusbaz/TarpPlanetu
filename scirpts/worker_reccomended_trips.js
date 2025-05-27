@@ -23,6 +23,14 @@ function createStars() {
 
 createStars();
 
+const deleteBtn = document.querySelectorAll(".deleteBtn");
+
+deleteBtn.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    btn.parentElement.remove();
+  })
+);
+
 function openModal() {
   document.getElementById("tripModal").style.display = "block";
 }
@@ -53,6 +61,7 @@ function submitForm(event) {
         <p>Trukmė: ${duration}</p>
         <p>Vietų skaičius: ${seats}</p>
         <p>Aprašymas: ${description}</p>
+        <button class="deleteBtn">Ištrinti siūloma kelionę</button>
       `;
 
   tripList.appendChild(newCard);
