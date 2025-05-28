@@ -21,7 +21,8 @@
 
     <div class="d-flex align-items-center ms-auto">
       <!--<a href="#" class="btn btn-warning me-3 fw-bold  cursor: pointer;">Gauti rekomendaciją</a> -->
-      <a href="#" class="text-white text-decoration-none me-3 fw-bold cursor: pointer;">Sukurti kelionės planą</a>
+      <a href="recommended_client.html" class="text-white text-decoration-none me-3 cursor: pointer;">Rekomendacijos</a>
+      <a href="#" class="text-white text-decoration-none me-3 cursor: pointer;">Sudaryti kelionės planą</a>
       <a href="client_my_trips.html" class="text-white text-decoration-none me-3 cursor: pointer;">Mano kelionės</a>
       <a href="#">
         <img src="assets/profile.png" alt="Profilis" class="profile-icon">
@@ -40,6 +41,7 @@
 
   <nav class="mobile-nav" id="mobile-nav">
     <ul>
+      <li><a href="recommended_client.html" >Rekomendacijos</a></li>
       <li><a href="SukurtiKelione.html">Sukurti kelionės planą</a></li>
       <li><a href="client_my_trips.html">Mano kelionės</a></li>
       <li><a href="#"><img src="assets/profile.png" alt="Profilis" class="profile-icon"></a></li>
@@ -50,9 +52,9 @@
   
   <div class="bg-overlay"></div> <!-- patamsinimui pacio fono-->
   <!-- gauti rekomendacija mygtukas-->
-  <div class="px-4 pb-4">
-    <a href="#" class="btn btn-warning fw-bold rounded-pill px-4">Gauti rekomendaciją</a>
-  </div>
+  <!-- <div class="px-4 pb-4">
+    <a href="recommended_client.html" class="btn btn-warning fw-bold rounded-pill px-4">Gauti rekomendaciją</a>
+  </div> -->
   
   <div class="container position-relative"> <!--</div> style="background: url('../wwwroot/img/stars.jpg') no-repeat center center; background-size: cover;"> -->
     
@@ -115,12 +117,12 @@
     </div>
 
     <div class="mb-4">
-      <label class="form-label fw-bold text-white">VIEŠBUTIS</label>
-      <div id="hotelsGallery" class="hotel-card-wide w-100 mb-3">
-        <img src="assets/hotels/ekonomiskas.png" alt="Viešbutis ekonominis" class="hotel-img">
-        <img src="assets/hotels/modernus.png" alt="Viešbutis modernus" class="hotel-img">
-      </div>
-    </div>
+  <label class="form-label fw-bold text-white">VIEŠBUTIS</label>
+  <div id="hotelsGallery" class="d-flex flex-wrap gap-4"></div>
+
+  <!-- <div id="hotelsGallery" class="d-flex justify-content-between flex-wrap"></div> -->
+</div>
+
 
     <div class="mb-4 d-flex align-items-center justify-content-between">
       <label for="maistoDieta" class="form-label fw-bold text-white me-3 mb-0">MAISTO DIETA</label>
@@ -170,7 +172,8 @@
     
       <input type="text" id="kaina" class="form-control kaina-input me-3" placeholder="€" />
     
-      <button class="btn btn-warning fw-bold rounded-pill px-4">IŠSAUGOTI PLANĄ</button>
+      <a href="client_my_trips.html" class="btn btn-warning fw-bold rounded-pill px-4">IŠSAUGOTI PLANĄ</a>
+     
     </div>  
 </div>
   
@@ -192,22 +195,106 @@
 
 <script>
 
-  // ... visa tavo planetHotels logika ir event listeneriai kaip buvo anksčiau
+  // Paprasta pet pasirinkimo logika
+document.querySelectorAll('.pet-img').forEach(img => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', function() {
+    document.querySelectorAll('.pet-img').forEach(p => p.classList.remove('selected'));
+    this.classList.add('selected');
+    updatePrice();
+  });
+});
 
-// Funkcija parodyti viešbučius pagal planetą
+
+function generateRandomPrice(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function updatePrice() {
+  const selectedPlanet = document.querySelector('.selectable-planet.planet-selected');
+  const selectedDate = document.getElementById('kelionesData').value;
+  const selectedCompanion = document.querySelector('input[name="bendrakeleiviai"]:checked');
+  const selectedHotel = document.querySelector('.hotel-option.selected');
+  const selectedDiet = document.getElementById('maistoDieta').value;
+  const selectedPet = document.querySelector('.pet-img.selected');
+  const selectedActivity = document.querySelector('input[name="veiklos"]:checked');
+
+  const priceInput = document.getElementById('kaina');
+
+  if (
+    selectedPlanet &&
+    selectedDate &&
+    selectedCompanion &&
+    selectedHotel &&
+    selectedDiet && selectedDiet !== '' &&
+    selectedPet &&
+    selectedActivity
+  ) {
+    const price = generateRandomPrice(10000, 75000);
+    priceInput.value = price.toLocaleString('lt-LT') + ' €';
+  } else {
+    priceInput.value = '';
+  }
+}
+
+// Event listeneriai parametrų pasikeitimams
+
+// Planeta
+document.querySelectorAll('.selectable-planet').forEach(planet => {
+  planet.addEventListener('click', () => {
+    updatePrice();
+  });
+});
+
+// Data
+document.getElementById('kelionesData').addEventListener('change', () => {
+  updatePrice();
+});
+
+// Bendrakeleiviai (radio)
+document.querySelectorAll('input[name="bendrakeleiviai"]').forEach(radio => {
+  radio.addEventListener('change', () => {
+    updatePrice();
+  });
+});
+
+// Jei nori iš karto pildyti kainą įkėlus puslapį
+window.addEventListener('DOMContentLoaded', () => {
+  updatePrice();
+});
+
+
 function showHotelsForPlanet(planet) {
   const hotels = planetHotels[planet] || [];
   let html = '';
-  hotels.forEach(hotel => {
+  hotels.forEach((hotel, idx) => {
     html += `
-      <div class="hotel-card-wide w-100">
-        <img src="${hotel.img}" alt="${hotel.title}" class="hotel-img" style="width: 150px; border-radius: 16px;">
-        <div style="margin-top: 0.3em;">${hotel.title}</div>
+      <div class="hotel-option" tabindex="0" data-index="${idx}" title="${hotel.title}">
+        <img src="${hotel.img}" class="hotel-img-wide" alt="${hotel.title}">
       </div>
     `;
   });
-  document.getElementById('hotelsGallery').innerHTML = html || "<div class='text-center w-100'>Viešbučių nerasta šioje planetoje.</div>";
+  document.getElementById('hotelsGallery').innerHTML = html || "<div class='text-center'>Viešbučių nerasta šioje planetoje.</div>";
+  // Click ir keyboard pasirinkimas:
+  document.querySelectorAll('.hotel-option').forEach(option => {
+    option.addEventListener('click', function() {
+      document.querySelectorAll('.hotel-option').forEach(p => p.classList.remove('selected'));
+      this.classList.add('selected');
+      // galima išsaugoti pasirinkimą į kintamąjį
+    });
+    option.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
 }
+
+
+
+
+
 
 // --- PLANETOS PASIRINKIMAS (klasėms selectable-planet) ---
 document.querySelectorAll('.selectable-planet').forEach(planetImg => {
@@ -240,35 +327,35 @@ window.addEventListener('DOMContentLoaded', function() {
 const planetHotels = {
   "Marsas": [
     { img: "assets/hotels/mars-bendras.png", title: "Mars Resort" },
-    { img: "assets/hotels/mars2.png", title: "Mars Dome" }
+    { img: "assets/hotels/mars-alt.png", title: "Mars Dome" }
   ],
   "Merkurijus": [
     { img: "assets/hotels/mercury-bendras.png", title: "Mercury Sunrise" },
-    { img: "assets/hotels/mercury2.png", title: "Solar View Hotel" }
+    { img: "assets/hotels/mercury-alt.png", title: "Solar View Hotel" }
   ],
   "Mėnulis": [
     { img: "assets/hotels/moon-bendras.png", title: "Lunar Base" },
-    { img: "assets/hotels/moon2.png", title: "Moon Capsule" }
+    { img: "assets/hotels/moon-alt.png", title: "Moon Capsule" }
   ],
   "Venera": [
     { img: "assets/hotels/venera-bendras.png", title: "Venera Palace" },
-    { img: "assets/hotels/venera2.png", title: "Venus Dream" }
+    { img: "assets/hotels/venera-alt.png", title: "Venus Dream" }
   ],
   "Jupiteris": [
     { img: "assets/hotels/jupyter-bendras.png", title: "Jupiter Orbital" },
-    { img: "assets/hotels/jupyter2.png", title: "Storm View" }
+    { img: "assets/hotels/jupyter-alt.png", title: "Storm View" }
   ],
   "Saturnas": [
     { img: "assets/hotels/saturn-bendras.png", title: "Saturn Ring Inn" },
-    { img: "assets/hotels/saturn2.png", title: "Titan Resort" }
+    { img: "assets/hotels/saturn-alt.png", title: "Titan Resort" }
   ],
   "Uranas": [
     { img: "assets/hotels/uranus-bendras.png", title: "Uranus Ice Hotel" },
-    { img: "assets/hotels/uranus2.png", title: "Sky Retreat" }
+    { img: "assets/hotels/uranus-alt.png", title: "Sky Retreat" }
   ],
   "Neptūnas": [
     { img: "assets/hotels/neptune-bendras.png", title: "Neptune Blue Palace" },
-    { img: "assets/hotels/neptune2.png", title: "Deep Sea Hotel" }
+    { img: "assets/hotels/neptune-alt.png", title: "Deep Sea Hotel" }
   ]
 };
 
@@ -285,19 +372,19 @@ document.querySelectorAll('.selectable-planet').forEach(planetImg => {
   });
 });
 
-function showHotelsForPlanet(planet) {
-  const hotels = planetHotels[planet] || [];
-  let html = '';
-  hotels.forEach(hotel => {
-    html += `
-      <div class="text-center m-2">
-        <img src="${hotel.img}" alt="${hotel.title}" class="hotel-img" style="width: 150px; border-radius: 16px;">
-        <div style="margin-top: 0.3em;">${hotel.title}</div>
-      </div>
-    `;
-  });
-  document.getElementById('hotelsGallery').innerHTML = html || "<div class='text-center w-100'>Viešbučių nerasta šioje planetoje.</div>";
-}
+// function showHotelsForPlanet(planet) {
+//   const hotels = planetHotels[planet] || [];
+//   let html = '';
+//   hotels.forEach(hotel => {
+//     html += `
+//       <div class="text-center m-2">
+//         <img src="${hotel.img}" alt="${hotel.title}" class="hotel-img" style="width: 150px; border-radius: 16px;">
+//         <div style="margin-top: 0.3em;">${hotel.title}</div>
+//       </div>
+//     `;
+//   });
+//   document.getElementById('hotelsGallery').innerHTML = html || "<div class='text-center'>Viešbučių nerasta šioje planetoje.</div>";
+// }
 
 </script>
 <script src="scirpts/client_profile_button_toggle.js"></script>
