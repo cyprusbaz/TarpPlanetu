@@ -6,7 +6,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="styles/worker_recommended_trips.css">
         <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>Siūlomos kelionės</title>
 </head>
 <body>
         <header>
@@ -62,7 +62,10 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
-                        <button class="deleteBtn">Ištrinti siūloma kelionę</button>
+         <div class="card-buttons">
+          <button class="editBtn">Redaguoti kelionę</button>
+          <button class="deleteBtn">Ištrinti siūlomą kelionę</button>
+        </div>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -72,7 +75,10 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
-                                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
+        <div class="card-buttons">
+          <button class="editBtn">Redaguoti kelionę</button>
+          <button class="deleteBtn">Ištrinti siūlomą kelionę</button>
+        </div>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -82,7 +88,10 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
-                                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
+        <div class="card-buttons">
+          <button class="editBtn">Redaguoti kelionę</button>
+           <button class="deleteBtn">Ištrinti siūlomą kelionę</button>
+      </div>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -92,7 +101,10 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
-                                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
+        <div class="card-buttons">
+         <button class="editBtn">Redaguoti kelionę</button>
+         <button class="deleteBtn">Ištrinti siūlomą kelionę</button>
+       </div>
       </div>
       <div class="trip-card">
         <h3>Kelionė į Marsą</h3>
@@ -102,7 +114,10 @@
         <p>Trukmė: 420 dienų</p>
         <p>Vietų skaičius: 39</p>
         <p>Aprašymas: Tyrinėkite raudonąją planetą su profesionaliais gidais.</p>
-                <button class="deleteBtn">Ištrinti siūloma kelionę</button>
+        <div class="card-buttons">
+         <button class="editBtn">Redaguoti kelionę</button>
+         <button class="deleteBtn">Ištrinti siūlomą kelionę</button>
+       </div>
       </div>
     </div>
     
@@ -151,6 +166,47 @@
       </form>
     </div>
   </div>
+  <div id="editTripModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeEditModal()">&times;</span>
+    <h2>Redaguoti kelionę</h2>
+    <form id="editTripForm" onsubmit="submitEditForm(event)">
+      <input type="text" id="editTitle" placeholder="Kelionės pavadinimas" required />
+      <label for="editPlanet">Pasirinkite planetą:</label>
+      <select id="editPlanet" name="planet">
+        <option value="Marsas">Marsas</option>
+        <option value="Venera">Venera</option>
+        <option value="Jupiteris">Jupiteris</option>
+        <option value="Saturnas">Saturnas</option>
+        <option value="Merkurijus">Merkurijus</option>
+        <option value="Uranas">Uranas</option>
+        <option value="Neptūnas">Neptūnas</option>
+        <option value="Mėnulis">Mėnulis</option>
+      </select>
+      <input type="number" id="editPrice" placeholder="Kaina (€)" required />
+      <input type="number" min="1" placeholder="Trukmė (dienomis)" id="editDuration" required />
+      <input type="number" min="1" placeholder="Vietų skaičius" id="editSeats" required />
+      <textarea id="editDescription" placeholder="Trumpas aprašymas" required></textarea>
+      <fieldset class="veiklos-grupe">
+        <legend>Pasirinkite veiklą:</legend>
+        <div class="veikla">
+          <input type="radio" id="editZygis" name="editVeiklos" value="Žygis po kalnus" required>
+          <label for="editZygis">Žygis po kalnus</label>
+        </div>
+        <div class="veikla">
+          <input type="radio" id="editSportas" name="editVeiklos" value="Sporto treniruotė su ateiviais">
+          <label for="editSportas">Sporto treniruotė su ateiviais</label>
+        </div>
+        <div class="veikla">
+          <input type="radio" id="editProtiniai" name="editVeiklos" value="Iškasenų laboratorija">
+          <label for="editProtiniai">Iškasenų laboratorija</label>
+        </div>
+      </fieldset>
+      <button type="submit">Atnaujinti</button>
+    </form>
+  </div>
+</div>
+
    <footer>
         <div class="bg-black text-white py-5">
             <div class="container">
