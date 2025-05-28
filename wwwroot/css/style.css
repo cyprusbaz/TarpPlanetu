@@ -132,12 +132,7 @@ body {
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);*/
   }
 
-  .hotel-img {
-    width: 48%;
-    border-radius: 16px;
-    object-fit: cover;
-  }
-  
+
 
   .custom-input {
     background-color: rgba(255, 255, 255, 0.1);
@@ -228,7 +223,56 @@ body {
   
   
   
-  
+/* #hotelsGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.hotel-card-wide {
+  flex: 1 1 100%;  
+  max-width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hotel-img-wide {
+  width: 100%;  
+  max-width: 100%; 
+  aspect-ratio: 16/6; 
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  transition: transform 0.16s;
+  background: #181a34;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+.hotel-title {
+  color: white;
+  font-size: 1.13rem;
+  margin-top: 0.4em;
+  text-align: center;
+} */
+
+#hotelsGallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px; /* arba kiek tau reikia tarpo */
+}
+.hotel-img-wide {
+  height: 140px;   /* ar kitoks dydis */
+  width: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  /* pašalink display: block; arba width: 100% jeigu buvo */
+}
+
+
   
   
   
