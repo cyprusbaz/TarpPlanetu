@@ -186,11 +186,11 @@ body {
     pointer-events: none;
   }
   
-  .pet-img {
+  /* .pet-img {
     width: 14%;
     border-radius: 8px;
     object-fit: cover;
-  }
+  } */
 
   .kaina-input {
     max-width: 100px;
@@ -657,4 +657,27 @@ input:focus {
   box-shadow: 0 0 12px 2px #ffd70088;
   /* border-radius: 10px;
   filter: brightness(1.1); */
+}
+
+.pets-container {
+  gap: 20px;
+}
+
+.selectable-pet {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.selectable-pet:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.selectable-pet.selected {
+   border: 3px solid #ffd700;
+  box-shadow: 0 0 12px 2px #ffd70088;
 }
