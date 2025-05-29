@@ -137,7 +137,7 @@
       </div>
     </div>
 
-    <div class="mb-4">
+    <!-- <div class="mb-4">
       <label class="form-label fw-bold text-white">VIETINIO GYVŪNĖLIO GLOBA</label>
       <div class="d-flex justify-content-between flex-wrap">
         <img src="assets/pets/lapiukas.png" alt="Lapiukas" class="pet-img">
@@ -148,21 +148,32 @@
         <img src="assets/pets/suniukas.png" alt="Šuniukas" class="pet-img">
         <img src="assets/pets/varliukas.png" alt="Varliukas" class="pet-img">
       </div>
+    </div> -->
+    <div class="mb-4 vietinio-gyvunelio-globa">
+  <label class="form-label fw-bold text-white">VIETINIO GYVŪNĖLIO GLOBA</label>
+<div class="d-flex align-items-center gap-4 flex-wrap pets-container"></div>
     </div>
+
 
     <div class="mb-4">
       <label class="form-label fw-bold text-white">PAPILDOMOS VEIKLOS</label>
-      <div class="d-flex justify-content-between flex-wrap">
-        <div class="d-flex gap-3 flex-wrap">
-          <input type="radio" class="btn-check" name="veiklos" id="zygis" autocomplete="off">
-          <label class="btn custom-radio-btn flex-fill" for="zygis">Žygis po kalnus</label>
-      
-          <input type="radio" class="btn-check" name="veiklos" id="sportas" autocomplete="off">
-          <label class="btn custom-radio-btn flex-fill" for="sportas">Sporto treniruotė su ateiviais</label>
+<div class="d-flex flex-wrap gap-2">
+        <input type="radio" class="btn-check" name="veiklos" id="zygis" autocomplete="off">
+    <label class="btn custom-radio-btn flex-fill" for="zygis">Žygis po kalnus</label>
 
-          <input type="radio" class="btn-check" name="veiklos" id="protiniai" autocomplete="off">
-          <label class="btn custom-radio-btn flex-fill" for="protiniai">Iškasenų laboratorija</label>
-        </div>
+    <input type="radio" class="btn-check" name="veiklos" id="sportas" autocomplete="off">
+    <label class="btn custom-radio-btn flex-fill" for="sportas">Sporto treniruotė su ateiviais</label>
+
+    <input type="radio" class="btn-check" name="veiklos" id="protiniai" autocomplete="off">
+    <label class="btn custom-radio-btn flex-fill" for="protiniai">Iškasenų laboratorija</label>
+
+    <!-- Naujos veiklos -->
+    <input type="radio" class="btn-check" name="veiklos" id="plaukiojimas" autocomplete="off">
+    <label class="btn custom-radio-btn flex-fill" for="plaukiojimas">Plaukiojimas gravitacijos baseine</label>
+
+    <input type="radio" class="btn-check" name="veiklos" id="muzika" autocomplete="off">
+    <label class="btn custom-radio-btn flex-fill" for="muzika">Kosminė muzikinė naktis</label>
+
       </div>
     </div>
 
@@ -196,14 +207,21 @@
 <script>
 
   // Paprasta pet pasirinkimo logika
-document.querySelectorAll('.pet-img').forEach(img => {
-  img.style.cursor = 'pointer';
-  img.addEventListener('click', function() {
-    document.querySelectorAll('.pet-img').forEach(p => p.classList.remove('selected'));
-    this.classList.add('selected');
-    updatePrice();
-  });
-});
+// document.querySelectorAll('.pet-img').forEach(img => {
+//   img.style.cursor = 'pointer';
+//   img.addEventListener('click', function() {
+//     document.querySelectorAll('.pet-img').forEach(p => p.classList.remove('selected'));
+//     this.classList.add('selected');
+//     updatePrice();
+//   }
+// 
+//     document.querySelectorAll('.selectable-pet').forEach(img => {
+//       img.addEventListener('click', function() {
+//         document.querySelectorAll('.selectable-pet').forEach(p => p.classList.remove('selected'));
+//         this.classList.add('selected');
+//         updatePrice(); // <- ši eilutė būtina!
+//       });
+// });
 
 
 function generateRandomPrice(min, max) {
@@ -216,7 +234,7 @@ function updatePrice() {
   const selectedCompanion = document.querySelector('input[name="bendrakeleiviai"]:checked');
   const selectedHotel = document.querySelector('.hotel-option.selected');
   const selectedDiet = document.getElementById('maistoDieta').value;
-  const selectedPet = document.querySelector('.pet-img.selected');
+  const selectedPet = document.querySelector('.selectable-pet.selected');
   const selectedActivity = document.querySelector('input[name="veiklos"]:checked');
 
   const priceInput = document.getElementById('kaina');
@@ -258,10 +276,7 @@ document.querySelectorAll('input[name="bendrakeleiviai"]').forEach(radio => {
   });
 });
 
-// Jei nori iš karto pildyti kainą įkėlus puslapį
-window.addEventListener('DOMContentLoaded', () => {
-  updatePrice();
-});
+
 
 
 function showHotelsForPlanet(planet) {
@@ -275,24 +290,30 @@ function showHotelsForPlanet(planet) {
     `;
   });
   document.getElementById('hotelsGallery').innerHTML = html || "<div class='text-center'>Viešbučių nerasta šioje planetoje.</div>";
-  // Click ir keyboard pasirinkimas:
-  document.querySelectorAll('.hotel-option').forEach(option => {
-    option.addEventListener('click', function() {
-      document.querySelectorAll('.hotel-option').forEach(p => p.classList.remove('selected'));
+
+  const hotelOptions = document.querySelectorAll('.hotel-option');
+
+  // pridėti eventus
+  hotelOptions.forEach(option => {
+    option.addEventListener('click', function () {
+      hotelOptions.forEach(p => p.classList.remove('selected'));
       this.classList.add('selected');
-      // galima išsaugoti pasirinkimą į kintamąjį
+      updatePrice(); // <- labai svarbu
     });
-    option.addEventListener('keydown', function(e) {
+
+    option.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         this.click();
       }
     });
   });
+
+  // ✅ Automatiškai pažymėk pirmą viešbutį
+  if (hotelOptions.length > 0) {
+    hotelOptions[0].classList.add('selected');
+  }
 }
-
-
-
 
 
 
@@ -310,18 +331,90 @@ document.querySelectorAll('.selectable-planet').forEach(planetImg => {
 });
 
 // --- AUTOMATINIS MARSO PASIRINKIMAS ---
-window.addEventListener('DOMContentLoaded', function() {
-  showHotelsForPlanet('Marsas'); // iškart parodo Marso viešbučius
+// window.addEventListener('DOMContentLoaded', function() {
+//   showHotelsForPlanet('Marsas');
+//   showPetsForPlanet('Marsas');
+//   updatePrice(); // <-- labai svarbu, kad būtų iškart paskaičiuojama
 
+//   // Pažymi Marsą kaip pasirinktą
+//   document.querySelectorAll('.selectable-planet').forEach(img => {
+//     if (img.getAttribute('data-planet') === 'Marsas') {
+//       img.classList.add('planet-selected');
+//     } else {
+//       img.classList.remove('planet-selected');
+//     }
+//   });
+
+//   // Rytojaus data kaip minimali
+//   const dateInput = document.getElementById('kelionesData');
+//   const tomorrow = new Date();
+//   tomorrow.setDate(tomorrow.getDate() + 1);
+//   const yyyy = tomorrow.getFullYear();
+//   const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+//   const dd = String(tomorrow.getDate()).padStart(2, '0');
+//   dateInput.min = `${yyyy}-${mm}-${dd}`;
+// });
+window.addEventListener('DOMContentLoaded', function () {
   // pažymi Marsą kaip pasirinktą
   document.querySelectorAll('.selectable-planet').forEach(img => {
-    if(img.getAttribute('data-planet') === 'Marsas') {
+    if (img.getAttribute('data-planet') === 'Marsas') {
       img.classList.add('planet-selected');
     } else {
       img.classList.remove('planet-selected');
     }
   });
+
+  showHotelsForPlanet('Marsas'); // su updatePrice() viduje
+  showPetsForPlanet('Marsas');   // su updatePrice() viduje
+
+  // ✅ NEREIKIA čia kviesti updatePrice() — jis iškviečiamas po pažymėjimo viešbučio/gyvūno
+  // Paliekam švariai.
+  
+  // Nustatome min datą
+  const dateInput = document.getElementById('kelionesData');
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const yyyy = tomorrow.getFullYear();
+  const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+  const dd = String(tomorrow.getDate()).padStart(2, '0');
+  dateInput.min = `${yyyy}-${mm}-${dd}`;
 });
+
+
+const planetPets = {
+  "Merkurijus": [
+    { img: "assets/pets/lapiukas.png", alt: "Merkurijaus augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ],
+  "Marsas": [
+    { img: "assets/pets/suniukas.png", alt: "Marso augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ],
+  "Mėnulis": [
+    { img: "assets/pets/lapiukas2.png", alt: "Mėnulio  augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ],
+  "Jupiteris": [
+    { img: "assets/pets/drieziukas.png", alt: "Jupiterio augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ],
+  "Saturnas": [
+    { img: "assets/pets/suniukas.png", alt: "Saturno augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ],
+  "Uranas": [
+    { img: "assets/pets/varliukas.png", alt: "Urano augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ],
+  "Neptūnas": [
+    { img: "assets/pets/lapiukas-alt.png", alt: "Neptūno augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ],
+  "Venera": [
+    { img: "assets/pets/cute.png", alt: "Veneros augintinis" },
+    { img: "assets/pets/noPet.png", alt: "Be augintinio" }
+  ]
+};
 
   // Viešbučių paveikslėlių sąrašas pagal planetą:
 const planetHotels = {
@@ -358,6 +451,48 @@ const planetHotels = {
     { img: "assets/hotels/ekonomiskas.png", title: "Deep Sea Hotel" }
   ]
 };
+
+function showPetsForPlanet(planet) {
+  const pets = planetPets[planet] || [];
+  let html = '';
+  pets.forEach(pet => {
+    html += `<img src="${pet.img}" alt="${pet.alt}" class="pet-img selectable-pet" style="cursor:pointer; margin-right: 10px;">`;
+  });
+  const petsContainer = document.querySelector('.vietinio-gyvunelio-globa .d-flex');
+  if (petsContainer) {
+    petsContainer.innerHTML = html;
+
+    // Pridėti event listenerius pet pasirinkimui (analogas esamam)
+    document.querySelectorAll('.selectable-pet').forEach(img => {
+      img.addEventListener('click', function() {
+        document.querySelectorAll('.selectable-pet').forEach(p => p.classList.remove('selected'));
+        this.classList.add('selected');
+        updatePrice();  // jei kaina priklauso nuo peto pasirinkimo
+      });
+    });
+  };
+
+  // ✅ Automatiškai pažymėk pirmą gyvūnėlį
+const petOptions = document.querySelectorAll('.selectable-pet');
+if (petOptions.length > 0) {
+  petOptions[0].classList.add('selected');
+  updatePrice();
+}
+
+}
+
+document.querySelectorAll('.selectable-planet').forEach(planetImg => {
+  planetImg.addEventListener('click', function() {
+    const planet = this.getAttribute('data-planet');
+    showHotelsForPlanet(planet);
+    showPetsForPlanet(planet);  // čia pridedame petų atnaujinimą
+
+    document.querySelectorAll('.selectable-planet').forEach(p => p.classList.remove('planet-selected'));
+    this.classList.add('planet-selected');
+  });
+});
+
+
 
 // Pasirink planetą:
 document.querySelectorAll('.selectable-planet').forEach(planetImg => {
